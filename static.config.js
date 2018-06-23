@@ -11,14 +11,18 @@ export default {
     title: 'Timo Lins'
   }),
   getRoutes: async () => {
-    const {projects, about} = await jdown('content')
+    const {projects, achievements, about} = await jdown('content')
 
     return [
       {
         path: '/',
         component: 'src/pages/Home',
         getData: () => ({
-          projects: projects.filter(project => project.slug)
+          projects: projects.filter(project => project.slug).map(project => ({
+            ...project,
+            types: project.types.split(', ')
+          })),
+          achievements
         }),
         children: projects.map(project => ({
           path: `/${project.slug}`,

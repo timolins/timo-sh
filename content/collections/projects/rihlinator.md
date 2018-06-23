@@ -1,6 +1,6 @@
 ---
 title: Rihlinator
-tags: Dere, Hans
+types: code, design
 slug: rihlinator
 ---
 

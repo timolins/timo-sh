@@ -1,6 +1,6 @@
 ---
 title: Vanilla Supply
-tags: dere
+types: design
 slug: vanilla-supply
 ---
 

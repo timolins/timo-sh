@@ -1,7 +1,7 @@
 ---
-title: Teem
+title: Schulsprecher
 types: video, code, design
-slug: teem
+slug: schulsprecher
 ---
 
 Content...

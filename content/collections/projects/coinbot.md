@@ -1,6 +1,6 @@
 ---
 title: Coinbot
-tags: Dere, Hans
+types: code, design
 slug: coinbot
 ---
 

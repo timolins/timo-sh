@@ -1,6 +1,6 @@
 ---
 title: Lüge der Medien
-tags: Dere, Hans
+types: video
 slug: luege-der-medien
 ---
 

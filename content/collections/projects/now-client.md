@@ -1,6 +1,6 @@
 ---
 title: now-client
-tags: Dere, Hans
+types: code
 slug: now-client
 ---
 

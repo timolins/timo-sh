@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {lighten} from 'polished'
 import {Link} from 'react-static'
+import Icon from './icon'
 
 const ProductBox = styled.div`
   padding: 10px;
@@ -10,7 +11,6 @@ const ProductBox = styled.div`
   margin: 0 10px 10px 0;
   flex: ${p => p.flex || 1};
   order: ${p => -(p.flex || 0)};
-  background: #fff;
   border: 1px solid #eee;
   border-radius: 6px;
   position: relative;
@@ -18,17 +18,14 @@ const ProductBox = styled.div`
   box-sizing: border-box;
 `
 
-ProductBox.defaultProps = {
-  color: 'rgb(200,200,200)'
-}
-
 const LabelBackground = styled.div`
   background: rgba(0, 0, 0, 0);
   position: absolute;
-  height: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 `
 
 const Title = styled.span``
@@ -42,6 +39,8 @@ export default props => (
     <Link to={`/${props.slug}/`}>
       <Title color={props.color}>{props.title}</Title>
     </Link>
-    <LabelBackground>Dere</LabelBackground>
+    <LabelBackground>
+      {props.types.map(type => <Icon type={type} />)}
+    </LabelBackground>
   </ProductBox>
 )

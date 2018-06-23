@@ -1,6 +1,6 @@
 ---
 title: hyperlayout
-tags: Dere, Hans
+types: code, design
 slug: hyperlayout
 ---
 

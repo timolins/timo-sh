@@ -14,3 +14,7 @@ a {
 img {
   max-width: 100%;
 }
+
+section {
+  margin-bottom: 5rem;
+}
