@@ -12,11 +12,11 @@ const Icon = styled.img`
 export default ({type}) => {
   switch (type) {
     case 'design':
-      return <Icon src={design} />
+      return <Icon src={design} alt="Design" />
     case 'video':
-      return <Icon src={video} />
+      return <Icon src={video} alt="Video" />
     case 'code':
     default:
-      return <Icon src={code} />
+      return <Icon src={code} alt="Code" />
   }
 }
