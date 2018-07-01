@@ -7,6 +7,7 @@ import {ServerStyleSheet} from 'styled-components'
 chokidar.watch('content').on('all', () => reloadRoutes())
 
 export default {
+  preact: true,
   getSiteData: () => ({
     title: 'Timo Lins'
   }),
