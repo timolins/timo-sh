@@ -4,13 +4,12 @@ import jdown from 'jdown'
 import chokidar from 'chokidar'
 import {ServerStyleSheet} from 'styled-components'
 
+import config from './config.json'
+
 chokidar.watch('content').on('all', () => reloadRoutes())
 
 export default {
   preact: true,
-  getSiteData: () => ({
-    title: 'Timo Lins'
-  }),
   getRoutes: async () => {
     const {projects, achievements, about} = await jdown('content')
 
@@ -54,11 +53,12 @@ export default {
   },
   Document: class CustomHtml extends React.Component {
     render() {
-      const {Html, Head, Body, children, renderMeta} = this.props
+      const {Html, Head, Body, children, renderMeta, siteData} = this.props
 
       return (
         <Html>
           <Head>
+            <title>{config.name}</title>
             <meta charSet="UTF-8" />
             <meta
               name="viewport"

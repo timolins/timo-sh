@@ -1,10 +1,11 @@
 import React from 'react'
 import 'whatwg-fetch'
+import {githubToken, githubUsername} from '../../config.json'
 
 const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql'
 const headers = {
   'Content-Type': 'application/json',
-  Authorization: 'Bearer d55b2e520ae3255f7c525f809df6ca8c49784069'
+  Authorization: `Bearer ${githubToken}`
 }
 
 const query = `
