@@ -7,7 +7,9 @@ import AchievementWrapper from '../components/achievement-wrapper'
 export default withRouteData(({achievements}) => (
   <div>
     <AchievementWrapper>
-      {achievements.map(props => <Achievement {...props} />)}
+      {achievements
+        .sort((a1, a2) => new Date(a1.date) < new Date(a2.date))
+        .map(props => <Achievement key={props.title} {...props} />)}
     </AchievementWrapper>
   </div>
 ))

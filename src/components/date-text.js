@@ -4,11 +4,13 @@ import styled from 'styled-components'
 
 import {birthday} from '../../config.json'
 
+const Light = styled.span`
+  opacity: 0.5;
+`
+
 const Text = styled.div`
-  display: inline;
-  width: 200px;
+  display: inline-block;
   pointer-events: none;
-  position: absolute;
   transition: all 300ms ease-out;
   transition-delay: 80ms;
   transform: translateY(0);
@@ -16,16 +18,18 @@ const Text = styled.div`
 `
 
 const HiddenText = Text.extend`
+  position: absolute;
+  ${p => p.alignRight && 'right: 0'};
   transform: translateY(-30px);
   opacity: 0;
 `
 
 const Wrapper = styled.div`
   position: relative;
-  height: 1rem;
+  display: inline-block;
   cursor: default;
-  width: 80px;
   transition-duration: 200ms;
+  ${p => p.light && 'color: rgba(0, 0, 0, 0.6)'};
 
   &:hover ${Text}, &:active ${Text} {
     transform: translateY(25px);
@@ -37,16 +41,16 @@ const Wrapper = styled.div`
   }
 `
 
-const DateText = ({date}) => {
+const DateText = ({date, light, alignRight}) => {
   const day = dayjs(date)
   const age = day.diff(birthday, 'years')
   return (
-    <Wrapper onTouchStart={() => {}}>
-      <HiddenText>
-        <b>{age}</b> y/o
+    <Wrapper light={light} onTouchStart={() => {}}>
+      <HiddenText alignRight={alignRight}>
+        <span>{age}</span> <Light>y/o</Light>
       </HiddenText>
       <Text>
-        {day.format('MMM')} <b>{day.format('YYYY')}</b>
+        <Light>{day.format('MMM')}</Light> <span>{day.format('YYYY')}</span>
       </Text>
     </Wrapper>
   )
