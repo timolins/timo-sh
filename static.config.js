@@ -12,6 +12,7 @@ export default {
   preact: true,
   getRoutes: async () => {
     const {projects, achievements, about} = await jdown('content')
+    const {projects, achievements, about, contact} = await jdown('content')
 
     return [
       {
@@ -33,10 +34,10 @@ export default {
         }))
       },
       {
-        path: '/about',
-        component: 'src/pages/About',
+        path: '/contact',
+        component: 'src/pages/Contact',
         getData: () => ({
-          about
+          contact
         })
       },
       {
