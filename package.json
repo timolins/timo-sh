@@ -1,13 +1,12 @@
 {
-  "name": "react-static-example-basic",
-  "version": "1.0.1",
-  "main": "index.js",
+  "name": "timo-sh",
+  "version": "1.0.0-beta",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-static start",
-    "stage": "react-static build --staging",
-    "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "start": "serve ./dist -p 5000",
+    "dev": "react-static start",
+    "build": "react-static build"
   },
   "dependencies": {
     "chokidar": "2.0.3",
@@ -25,6 +24,6 @@
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
-    "serve": "^6.1.0"
+    "serve": "^9.1.1"
   }
 }
