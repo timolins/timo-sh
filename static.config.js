@@ -29,7 +29,8 @@ export default {
           path: `/${project.slug}`,
           component: 'src/pages/Project',
           getData: () => ({
-            project
+            project,
+            tags: project.tags && project.tags.split(', ')
           })
         }))
       },
