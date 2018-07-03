@@ -11,10 +11,6 @@ chokidar.watch('content').on('all', () => reloadRoutes())
 export default {
   preact: true,
   getRoutes: async () => {
-<<<<<<< HEAD
-=======
-    const {projects, achievements, about} = await jdown('content')
->>>>>>> 1195ee1c8e057cfee79220ea0c617f9f611bdf74
     const {projects, achievements, about, contact} = await jdown('content')
 
     return [
