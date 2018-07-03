@@ -1,9 +1,8 @@
 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="36" height="36" fill="white" transform="scale(0.5)"/>
-<rect width="32" height="23" rx="3" transform="translate(1 3.5) scale(0.5)" fill="#59885E"/>
-<rect width="13" height="3" rx="1.5" transform="translate(3 5.5) scale(0.5)" fill="#7AEC85"/>
-<rect width="6" height="3" rx="1.5" transform="translate(10.5 5.5) scale(0.5)" fill="#7AEC85"/>
-<rect width="24" height="3" rx="1.5" transform="translate(3 8.5) scale(0.5)" fill="#7AEC85"/>
-<rect width="6" height="3" rx="1.5" transform="translate(3 11.5) scale(0.5)" fill="#7AEC85"/>
-<rect width="9" height="3" rx="1.5" transform="translate(7 11.5) scale(0.5)" fill="#7AEC85"/>
+<rect width="32" height="23" rx="3" transform="translate(1 3.5) scale(0.5)" fill="#00CD0B"/>
+<rect width="13" height="3" rx="1.5" transform="translate(3 5.5) scale(0.5)" fill="#00F10C"/>
+<rect width="6" height="3" rx="1.5" transform="translate(10.5 5.5) scale(0.5)" fill="#00F10C"/>
+<rect width="24" height="3" rx="1.5" transform="translate(3 8.5) scale(0.5)" fill="#00F10C"/>
+<rect width="6" height="3" rx="1.5" transform="translate(3 11.5) scale(0.5)" fill="#00F10C"/>
+<rect width="9" height="3" rx="1.5" transform="translate(7 11.5) scale(0.5)" fill="#00F10C"/>
 </svg>
