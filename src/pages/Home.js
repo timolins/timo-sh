@@ -1,23 +1,35 @@
 import React from 'react'
-import convert from 'htmr'
+import styled from 'styled-components'
 
-import GithubStars from '../containers/github-stars'
+import Header from '../containers/header'
+import GithubRepos from '../containers/github-repos'
 import Projects from '../containers/projects'
 import Achievements from '../containers/achievements'
 
+import Wrapper from '../components/wrapper'
+
 export default () => (
   <div>
-    <section>
-      <h1>My Work</h1>
-      <Projects />
-    </section>
-    <section>
-      <h1>My Achievements</h1>
-      <Achievements />
-    </section>
-    <section>
-      <h1>Repos I like</h1>
-      <GithubStars />
-    </section>
+    <Wrapper big>
+      <Header />
+      <section>
+        <h2>My Work</h2>
+        <h3>Things I Have Done in the past</h3>
+        <Projects />
+      </section>
+    </Wrapper>
+    <Wrapper>
+      <section>
+        <h2>My Achievements</h2>
+        <h3>Dere</h3>
+        <Achievements />
+      </section>
+    </Wrapper>
+    <Wrapper big>
+      <section>
+        <h2>My GitHub Activity</h2>
+        <GithubRepos />
+      </section>
+    </Wrapper>
   </div>
 )

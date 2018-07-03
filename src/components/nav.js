@@ -5,7 +5,7 @@ import {Router, Link} from 'react-static'
 import Logo from './logo'
 
 const Nav = styled.nav`
-  margin: 50px 0;
+  margin: 2rem 0;
   align-items: center;
   display: flex;
   justify-content: space-between;
