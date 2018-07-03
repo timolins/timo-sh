@@ -1,12 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import {lighten, transparentize} from 'polished'
+import {lighten, tint} from 'polished'
 import {Link} from 'react-static'
 import Icon from './icon'
 
 const ProductBox = styled.div`
-  min-height: ${p => (p.featured ? '300px' : '120px')};
-  min-width: 150px;
+  min-height: ${p => (p.featured ? '320px' : '120px')};
+  min-width: 160px;
+  @media (max-width: 600px) {
+    ${p =>
+      p.featured &&
+      `
+      min-height: 250px;
+      min-width: 300px;
+    `};
+  }
   margin: 0 10px 10px 0;
   flex: ${p => p.flex || 1};
   order: ${p => -(p.flex || 0)};
@@ -18,6 +26,9 @@ const ProductBox = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  &:hover {
+    background: rgb(250, 250, 250);
+  }
 `
 
 const Title = styled.span`
@@ -29,7 +40,8 @@ const Title = styled.span`
 const ImageWrapper = styled.div`
   flex: 3;
   display: flex;
-  background: ${p => (p.color ? transparentize(0.9, p.color) : '#FFF')};
+  background-color: white;
+  background: ${p => (p.color ? tint(0.05, p.color) : '#FFF')};
   justify-content: center;
   align-items: center;
 `
@@ -39,10 +51,10 @@ const Wrapper = styled.div`
 `
 
 const DescWrapper = Wrapper.extend`
-  ${p => p.showLine && 'border-top: 1px solid #eee'};
+  ${p => p.featured && 'flex: 1.2'};
 `
 const Desc = styled.div`
-  opacity: 0.5;
+  opacity: 0.7;
   font-size: 0.9rem;
 `
 
@@ -54,20 +66,24 @@ const Iconbar = styled.div`
 `
 
 export default props => (
-  <ProductBox {...props}>
+  <ProductBox flex={props.flex} featured={props.featured}>
     {props.image && (
-      <ImageWrapper {...props}>
-        <img src={props.image} alt={props.title} />
+      <ImageWrapper color={props.color}>
+        <Link to={`/${props.slug}/`}>
+          <img src={props.image} alt={props.title} />
+        </Link>
       </ImageWrapper>
     )}
-    <DescWrapper showLine={!!props.image}>
-      <Link to={`/${props.slug}/`}>
+    <DescWrapper featured={props.featured}>
+      <Link scrollToTop={true} to={`/${props.slug}/`}>
         <Title color={props.color}>{props.title}</Title>
       </Link>
       <Desc>{props.desc}</Desc>
     </DescWrapper>
     <Wrapper>
-      <Iconbar>{props.types.map(type => <Icon type={type} />)}</Iconbar>
+      <Iconbar>
+        {props.types.map(type => <Icon key={type} type={type} />)}
+      </Iconbar>
     </Wrapper>
   </ProductBox>
 )
