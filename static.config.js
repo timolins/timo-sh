@@ -11,18 +11,19 @@ chokidar.watch('content').on('all', () => reloadRoutes())
 export default {
   preact: true,
   getRoutes: async () => {
-    const {projects, achievements, about} = await jdown('content')
+    const {projects, achievements, about, contact} = await jdown('content')
 
     return [
       {
         path: '/',
         component: 'src/pages/Home',
         getData: () => ({
+          about,
+          achievements,
           projects: projects.filter(project => project.slug).map(project => ({
             ...project,
             types: project.types.split(', ')
-          })),
-          achievements
+          }))
         }),
         children: projects.map(project => ({
           path: `/${project.slug}`,
@@ -33,10 +34,10 @@ export default {
         }))
       },
       {
-        path: '/about',
-        component: 'src/pages/About',
+        path: '/contact',
+        component: 'src/pages/Contact',
         getData: () => ({
-          about
+          contact
         })
       },
       {
