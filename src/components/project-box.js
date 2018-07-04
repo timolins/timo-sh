@@ -18,7 +18,7 @@ const ProductBox = styled.div`
   margin: 0 10px 10px 0;
   flex: ${p => p.flex || 1};
   order: ${p => -(p.flex || 0)};
-  border: 1px solid #eee;
+  box-shadow: inset 0 0 0 1px #eee;
   border-radius: 6px;
   position: relative;
   overflow: hidden;
@@ -37,13 +37,19 @@ const Title = styled.span`
   font-size: 1rem;
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(Link)`
   flex: 3;
   display: flex;
   background-color: white;
+  border-radius: 6px 6px 0 0;
   background: ${p => (p.color ? tint(0.05, p.color) : '#FFF')};
+  box-shadow: inset 0 0 0 1px ${p => (p.color ? tint(0.1, p.color) : '#EEE')};
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
 `
 
 const Wrapper = styled.div`
@@ -68,10 +74,8 @@ const Iconbar = styled.div`
 export default props => (
   <ProductBox flex={props.flex} featured={props.featured}>
     {props.image && (
-      <ImageWrapper color={props.color}>
-        <Link to={`/${props.slug}/`}>
-          <img src={props.image} alt={props.title} />
-        </Link>
+      <ImageWrapper to={`/${props.slug}/`} color={props.color}>
+        <img src={props.image} alt={props.title} />
       </ImageWrapper>
     )}
     <DescWrapper featured={props.featured}>
