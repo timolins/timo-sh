@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouteData, Link} from 'react-static'
+import {withRouteData} from 'react-static'
 import styled from 'styled-components'
 import convert from 'htmr'
 
@@ -30,7 +30,6 @@ class ScrollToTop extends React.Component {
 export default withRouteData(({project, tags}) => (
   <ScrollToTop>
     <Wrapper>
-      <Link to="/">← Back</Link>
       <Content>
         <TitleWrapper>
           <h2>{project.title}</h2>
