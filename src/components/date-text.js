@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   display: inline-block;
   cursor: default;
   transition-duration: 200ms;
+  padding: 1rem 0;
   ${p => p.light && 'color: rgba(0, 0, 0, 0.6)'};
 
   &:hover ${Text}, &:active ${Text} {
