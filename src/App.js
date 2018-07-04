@@ -13,10 +13,8 @@ import './app.css'
 const App = () => (
   <Router autoScrollToTop={false}>
     <div>
-      <Wrapper small>
-        <Nav>
-          <Link to="/contact">Hire me</Link>
-        </Nav>
+      <Wrapper darken big>
+        <Nav />
       </Wrapper>
       <Routes />
       <Wrapper>

@@ -46,7 +46,7 @@ export default ({repos, title, link, isLoading, quantity}) => {
       <div>
         {isLoading
           ? [...Array(quantity)].map((e, i) => (
-              <RepoPlaceholder delay={i * 50} />
+              <RepoPlaceholder key={i} delay={i * 50} />
             ))
           : repos.map(repo => (
               <GithubRepo

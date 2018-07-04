@@ -9,21 +9,12 @@ const Tags = styled.div`
 `
 
 const Tag = styled.span`
-  margin-right: 15px;
+  margin-right: 5px;
   color: rgb(60, 60, 60);
-  position: relative;
   font-size: 0.8rem;
-  &:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-    border: 1px solid #eee;
-    border-radius: 3px;
-  }
+  border-radius: 3px;
+  background: rgb(246, 246, 246);
+  padding: 5px;
 `
 
 export default ({tags}) =>
