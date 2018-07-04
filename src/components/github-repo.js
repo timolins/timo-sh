@@ -46,7 +46,7 @@ const Desc = styled.div`
 
 export default ({url, owner, name, stars, desc}) => (
   <Repo>
-    <a href={url}>
+    <a target="_blank" href={url}>
       <Light>{owner}/</Light>
       {name}
     </a>

@@ -1,14 +1,37 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 
 import GithubRepo from './github-repo.js'
 
 const GithubRepos = styled.div`
   display: inline-block;
   min-width: 240px;
-  width: 40%;
+  margin-top: 2rem;
+  width: 44%;
   @media (max-width: 600px) {
     width: 100%;
+  }
+`
+
+const pulse = keyframes`
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+`
+
+const RepoPlaceholder = styled.div`
+  height: 4rem;
+  background: #eee;
+  border-radius: 3px;
+  margin: 3rem 0;
+  animation: ${pulse} 1s linear infinite;
+  animation-delay: ${p => p.delay || 0}ms;
+
+  @media (max-width: 600px) {
+    margin: 2rem 0;
   }
 `
 
@@ -16,15 +39,15 @@ const Link = styled.a`
   font-size: 0.8rem;
 `
 
-export default ({repos, totalCount, title, link}) => {
-  const isLoading = repos.length === 0
-
+export default ({repos, title, link, isLoading, quantity}) => {
   return (
     <GithubRepos>
       <h3>{title}</h3>
       <div>
         {isLoading
-          ? 'Loading... '
+          ? [...Array(quantity)].map((e, i) => (
+              <RepoPlaceholder delay={i * 50} />
+            ))
           : repos.map(repo => (
               <GithubRepo
                 key={repo.id}

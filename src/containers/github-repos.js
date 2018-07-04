@@ -3,8 +3,11 @@ import 'whatwg-fetch'
 
 import GithubRepos from '../components/github-repos.js'
 import GithubReposWrapper from '../components/github-repos-wrapper.js'
+import Seperator from '../components/seperator'
 
 import {githubToken, githubUsername} from '../../config.json'
+
+const quantity = 5
 
 const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql'
 const headers = {
@@ -15,7 +18,7 @@ const headers = {
 const query = `
 query {
   user (login: "${githubUsername}") {
-    repositoriesContributedTo(last: 5, privacy: PUBLIC, includeUserRepositories: true, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY]) {
+    repositoriesContributedTo(last: ${quantity}, privacy: PUBLIC, includeUserRepositories: true, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY]) {
       nodes {
         id
         name
@@ -26,7 +29,7 @@ query {
         }
       }
     }
-    starredRepositories(last: 5) {
+    starredRepositories(last: ${quantity}) {
       nodes {
         id
         name
@@ -42,6 +45,7 @@ query {
 
 export default class GithubStars extends React.Component {
   state = {
+    isLoading: true,
     starredRepositories: {
       nodes: [],
       totalCount: 0
@@ -65,11 +69,16 @@ export default class GithubStars extends React.Component {
 
     this.setState({
       starredRepositories,
-      repositoriesContributedTo
+      repositoriesContributedTo,
+      isLoading: false
     })
   }
   render() {
-    const {starredRepositories, repositoriesContributedTo} = this.state
+    const {
+      starredRepositories,
+      repositoriesContributedTo,
+      isLoading
+    } = this.state
 
     return (
       <GithubReposWrapper>
@@ -77,11 +86,16 @@ export default class GithubStars extends React.Component {
           title="Repos I contributed to"
           link={`https://github.com/${githubUsername}`}
           repos={repositoriesContributedTo.nodes.reverse()}
+          quantity={quantity}
+          isLoading={isLoading}
         />
+        <Seperator />
         <GithubRepos
           title="Repos I recently starred"
           link={`https://github.com/${githubUsername}?tab=stars`}
           repos={starredRepositories.nodes.reverse()}
+          quantity={quantity}
+          isLoading={isLoading}
         />
       </GithubReposWrapper>
     )
