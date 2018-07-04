@@ -66,6 +66,7 @@ export default {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+            <link rel="shortcut icon" type="image/png" href="/favicon.png" />
             {renderMeta.styleTags}
           </Head>
           <Body>{children}</Body>
