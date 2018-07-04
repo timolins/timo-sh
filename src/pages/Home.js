@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Header from '../containers/header'
-import GithubRepos from '../containers/github-repos'
-import Projects from '../containers/projects'
-import Achievements from '../containers/achievements'
+import Wrapper from '../components/utils/wrapper.js'
 
-import Wrapper from '../components/wrapper'
+import Header from '../components/header/index.js'
+import GithubActivity from '../components/github-activity/index.js'
+import Projects from '../components/projects/index.js'
+import Achievements from '../components/achievements/index.js'
 
 export default () => (
   <div>
@@ -30,7 +30,7 @@ export default () => (
     <Wrapper big offset>
       <section>
         <h2>My GitHub Activity</h2>
-        <GithubRepos />
+        <GithubActivity />
       </section>
     </Wrapper>
   </div>

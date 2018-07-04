@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import {Router, Link} from 'react-static'
 
-import Logo from './logo'
-
 const Tags = styled.div`
   margin: 1rem 0;
 `

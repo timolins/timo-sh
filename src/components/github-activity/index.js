@@ -1,11 +1,11 @@
 import React from 'react'
 import 'whatwg-fetch'
 
-import GithubRepos from '../components/github-repos.js'
-import GithubReposWrapper from '../components/github-repos-wrapper.js'
-import Seperator from '../components/seperator'
+import GithubRepos from './github-repos.js'
+import GithubReposWrapper from './github-repos-wrapper.js'
+import Seperator from '../utils/seperator.js'
 
-import {githubToken, githubUsername} from '../../config.json'
+import {githubToken, githubUsername} from '../../../config.json'
 
 const quantity = 5
 

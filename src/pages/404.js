@@ -1,6 +1,6 @@
 import React from 'react'
-//
-import Wrapper from '../components/wrapper'
+
+import Wrapper from '../components/utils/wrapper.js'
 
 export default () => (
   <Wrapper>

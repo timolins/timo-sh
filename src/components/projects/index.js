@@ -1,8 +1,8 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
 
-import ProductBox from '../components/project-box'
-import ProductBoxWrapper from '../components/project-box-wrapper'
+import ProductBox from './project'
+import ProductBoxWrapper from './project-wrapper'
 
 const renderProject = props => <ProductBox key={props.slug} {...props} />
 

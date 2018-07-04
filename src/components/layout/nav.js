@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {Router, Link} from 'react-static'
 
-import Logo from './logo'
+import Logo from './logo.js'
 
 const Nav = styled.nav`
   margin: 2rem 0;

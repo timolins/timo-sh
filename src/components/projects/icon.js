@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import code from '../assets/icons/code.svg'
-import design from '../assets/icons/design.svg'
-import video from '../assets/icons/video.svg'
+import code from './assets/code.svg'
+import design from './assets/design.svg'
+import video from './assets/video.svg'
 
 const Icon = styled.img`
   margin: 0 2px;

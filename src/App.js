@@ -4,9 +4,9 @@ import {hot} from 'react-hot-loader'
 
 import Routes from 'react-static-routes'
 
-import Nav from './components/nav.js'
-import Wrapper from './components/wrapper.js'
-import Footer from './components/footer.js'
+import Nav from './components/layout/nav.js'
+import Footer from './components/layout/footer.js'
+import Wrapper from './components/utils/wrapper.js'
 
 import './app.css'
 

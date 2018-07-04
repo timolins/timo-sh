@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {lighten, tint} from 'polished'
 import {Link} from 'react-static'
+
 import Icon from './icon'
 
 const ProductBox = styled.div`

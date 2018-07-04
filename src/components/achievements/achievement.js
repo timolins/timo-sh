@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import convert from 'htmr'
 
-import DateText from './date-text.js'
+import DateText from '../utils/date-text.js'
 
 const Achievement = styled.div`
   margin: 1.5rem 0;
@@ -59,7 +58,7 @@ export default props => (
     </IconWrapper>
     <ContentWrapper>
       <Title color={props.color}>{props.title}</Title>
-      <div>{convert(props.contents)}</div>
+      <div>{props.children}</div>
     </ContentWrapper>
     <DateWrapper>
       <DateText date={props.date} />

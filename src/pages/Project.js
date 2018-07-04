@@ -3,9 +3,9 @@ import {withRouteData} from 'react-static'
 import styled from 'styled-components'
 import convert from 'htmr'
 
-import Wrapper from '../components/wrapper'
-import DateText from '../components/date-text'
-import Tags from '../components/tags'
+import Wrapper from '../components/utils/wrapper'
+import DateText from '../components/utils/date-text'
+import Tags from '../components/utils/tags'
 
 const Content = styled.div`
   padding-top: 4rem;
