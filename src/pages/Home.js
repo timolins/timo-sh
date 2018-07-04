@@ -10,22 +10,24 @@ import Wrapper from '../components/wrapper'
 
 export default () => (
   <div>
-    <Wrapper big>
+    <Wrapper darken>
       <Header />
+    </Wrapper>
+    <Wrapper big marginTop="4rem" marginBottom="8rem">
       <section>
         <h2>My Work</h2>
         <h3>Things I Have Done in the past</h3>
         <Projects />
       </section>
     </Wrapper>
-    <Wrapper>
+    <Wrapper marginBottom="8rem">
       <section>
         <h2>My Achievements</h2>
         <h3>Dere</h3>
         <Achievements />
       </section>
     </Wrapper>
-    <Wrapper big>
+    <Wrapper big marginBottom="8rem">
       <section>
         <h2>My GitHub Activity</h2>
         <GithubRepos />
