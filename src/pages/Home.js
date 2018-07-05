@@ -13,21 +13,21 @@ export default () => (
     <Wrapper darken>
       <Header />
     </Wrapper>
-    <Wrapper big offset>
+    <Wrapper big margin>
       <section>
         <h2>My Work</h2>
         <h3>Things I Have Done in the past</h3>
         <Projects />
       </section>
     </Wrapper>
-    <Wrapper offset>
+    <Wrapper margin>
       <section>
         <h2>My Achievements</h2>
         <h3>Dere</h3>
         <Achievements />
       </section>
     </Wrapper>
-    <Wrapper big offset>
+    <Wrapper big margin>
       <section>
         <h2>My GitHub Activity</h2>
         <GithubActivity />

@@ -6,5 +6,5 @@ export default styled.div`
   min-width: 100px;
   flex-direction: row;
   border-radius: 5px;
-  margin-left: 5px;
+  margin-right: -10px;
 `

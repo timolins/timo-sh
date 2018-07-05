@@ -5,7 +5,7 @@ import {Link} from 'react-static'
 
 import Icon from './icon'
 
-const ProductBox = styled.div`
+const Project = styled.div`
   min-height: ${p => (p.featured ? '320px' : '120px')};
   min-width: 160px;
   @media (max-width: 600px) {
@@ -73,7 +73,7 @@ const Iconbar = styled.div`
 `
 
 export default props => (
-  <ProductBox flex={props.flex} featured={props.featured}>
+  <Project flex={props.flex} featured={props.featured}>
     {props.image && (
       <ImageWrapper to={`/${props.slug}/`} color={props.color}>
         <img src={props.image} alt={props.title} />
@@ -90,5 +90,5 @@ export default props => (
         {props.types.map(type => <Icon key={type} type={type} />)}
       </Iconbar>
     </Wrapper>
-  </ProductBox>
+  </Project>
 )

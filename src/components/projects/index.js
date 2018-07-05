@@ -1,18 +1,18 @@
 import React from 'react'
 import {withRouteData} from 'react-static'
 
-import ProductBox from './project'
-import ProductBoxWrapper from './project-wrapper'
+import Project from './project'
+import ProjectWrapper from './project-wrapper'
 
-const renderProject = props => <ProductBox key={props.slug} {...props} />
+const renderProject = props => <Project key={props.slug} {...props} />
 
 export default withRouteData(({projects}) => (
   <div>
-    <ProductBoxWrapper>
+    <ProjectWrapper>
       {projects.filter(p => p.featured).map(renderProject)}
-    </ProductBoxWrapper>
-    <ProductBoxWrapper>
+    </ProjectWrapper>
+    <ProjectWrapper>
       {projects.filter(p => !p.featured).map(renderProject)}
-    </ProductBoxWrapper>
+    </ProjectWrapper>
   </div>
 ))

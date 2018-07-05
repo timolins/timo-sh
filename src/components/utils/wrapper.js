@@ -13,14 +13,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   max-width: ${p => (p.big ? '940px' : '740px')};
   width: 100%;
-  ${p => (p.offset ? 'margin: 3rem auto 6rem' : 'margin: 0 auto;')};
-  padding: 0 15px;
+  ${p => (p.margin ? 'margin: 3rem auto 6rem' : 'margin: 0 auto;')};
+  padding: 0 20px;
   box-sizing: border-box;
 `
 
 export default props => {
   const wrapper = (
-    <Wrapper offset={props.offset} big={props.big}>
+    <Wrapper margin={props.margin} big={props.big}>
       {props.children}
     </Wrapper>
   )
