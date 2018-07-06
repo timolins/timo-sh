@@ -2,7 +2,6 @@
   "name": "timo-sh",
   "version": "1.0.0-beta",
   "main": "src/index.js",
-  "license": "MIT",
   "scripts": {
     "start": "serve ./dist -p 5000",
     "dev": "react-static start",
