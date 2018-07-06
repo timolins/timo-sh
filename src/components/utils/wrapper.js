@@ -13,9 +13,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   max-width: ${p => (p.big ? '940px' : '740px')};
   width: 100%;
-  ${p => (p.margin ? 'margin: 3rem auto 6rem' : 'margin: 0 auto;')};
   padding: 0 20px;
   box-sizing: border-box;
+  margin: 0 auto;
+  ${p => p.margin && 'margin: 3rem auto 6rem'};
+  @media (max-width: 600px) {
+    ${p => p.margin && 'margin: 2rem auto 4rem'};
+  }
 `
 
 export default props => {
