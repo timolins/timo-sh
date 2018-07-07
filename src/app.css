@@ -38,6 +38,10 @@ h3 {
   font-weight: 500;
 }
 
+ul {
+  line-height: 2rem;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 2.3rem;
@@ -50,6 +54,24 @@ h3 {
     margin: 0.2rem 0 1rem;
     font-weight: 500;
   }
+}
+
+code {
+  position: relative;
+  display: inline-block;
+  margin: 0 3px;
+}
+
+code:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  left: -3px;
+  border-radius: 3px;
+  background: #eee;
 }
 
 .youtube-embed {

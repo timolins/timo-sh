@@ -10,6 +10,15 @@ import Tags from '../components/utils/tags'
 
 const Content = styled.div`
   padding-top: 4rem;
+  img {
+    margin: 2rem 0 0.5rem;
+  }
+  h3 {
+    margin-top: 3rem;
+  }
+  p {
+    line-height: 1.5rem;
+  }
 `
 
 const TitleWrapper = styled.div`
