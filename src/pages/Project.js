@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import convert from 'htmr'
 
 import Wrapper from '../components/utils/wrapper'
+import ScrollToTop from '../components/utils/scroll-to-top'
 import DateText from '../components/utils/date-text'
 import Tags from '../components/utils/tags'
 
@@ -17,15 +18,6 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
   flex-direction: row;
 `
-
-class ScrollToTop extends React.Component {
-  componentDidMount() {
-    window.scrollTo(0, 0)
-  }
-  render() {
-    return this.props.children
-  }
-}
 
 export default withRouteData(({project, tags}) => (
   <ScrollToTop>
