@@ -60,7 +60,7 @@ export default {
       return (
         <Html>
           <Head>
-            <title>{config.name}</title>
+            <title>{config.title}</title>
             <meta charSet="UTF-8" />
             <meta
               name="viewport"
