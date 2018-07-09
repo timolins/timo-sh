@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Head} from 'react-static'
 
 import Wrapper from '../components/utils/wrapper.js'
 
@@ -8,8 +9,13 @@ import GithubActivity from '../components/github-activity/index.js'
 import Projects from '../components/projects/index.js'
 import Achievements from '../components/achievements/index.js'
 
+import config from '../../config.json'
+
 export default () => (
   <div>
+    <Head>
+      <title>{`${config.name} ~ ${config.subtitle}`}</title>
+    </Head>
     <Wrapper darken>
       <Header />
     </Wrapper>

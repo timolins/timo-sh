@@ -30,7 +30,7 @@ const Button = styled(Link)`
 
 export default props => (
   <Nav>
-    <Link exact to="/">
+    <Link to="/">
       <Logo />
     </Link>
     <Button to="/contact">Let's talk</Button>

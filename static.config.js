@@ -20,7 +20,7 @@ export default {
         getData: () => ({
           about,
           achievements,
-          projects: projects.filter(project => project.slug).map(project => ({
+          projects: projects.map(project => ({
             ...project,
             types: project.types.split(', ')
           }))
@@ -57,10 +57,11 @@ export default {
     render() {
       const {Html, Head, Body, children, renderMeta, siteData} = this.props
 
+      console.log(siteData)
       return (
         <Html>
           <Head>
-            <title>{config.title}</title>
+            <title>{`${config.name} ~ ${config.subtitle}`}</title>
             <meta charSet="UTF-8" />
             <meta
               name="viewport"
