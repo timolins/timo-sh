@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Icon from './icon.js'
+
 import DateText from '../utils/date-text.js'
 
 const Achievement = styled.div`
@@ -54,7 +56,7 @@ const DateWrapper = styled.div`
 export default props => (
   <Achievement>
     <IconWrapper>
-      <img src={props.icon} />
+      <Icon type={props.icon} />
     </IconWrapper>
     <ContentWrapper>
       <Title color={props.color}>{props.title}</Title>
