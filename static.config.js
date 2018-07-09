@@ -10,6 +10,7 @@ chokidar.watch('content').on('all', () => reloadRoutes())
 
 export default {
   preact: true,
+  siteRoot: 'https://timo.sh',
   getRoutes: async () => {
     const {projects, achievements, about, contact} = await jdown('content')
 
@@ -25,13 +26,15 @@ export default {
             types: project.types.split(', ')
           }))
         }),
+        priority: 1,
         children: projects.map(project => ({
           path: `/${project.slug}`,
           component: 'src/pages/Project',
           getData: () => ({
             project,
             tags: project.tags && project.tags.split(', ')
-          })
+          }),
+          priority: project.featured ? 0.7 : 0.5
         }))
       },
       {
@@ -39,7 +42,8 @@ export default {
         component: 'src/pages/Contact',
         getData: () => ({
           contact
-        })
+        }),
+        priority: 0.8
       },
       {
         is404: true,
@@ -57,7 +61,6 @@ export default {
     render() {
       const {Html, Head, Body, children, renderMeta, siteData} = this.props
 
-      console.log(siteData)
       return (
         <Html>
           <Head>
