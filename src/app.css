@@ -74,6 +74,12 @@ code:after {
   background: #eee;
 }
 
+blockquote {
+  border-left: 2px solid #ddd;
+  padding-left: 10px;
+  margin: 0 2rem;
+}
+
 .youtube-embed {
   background: black;
   margin: 30px 0;
