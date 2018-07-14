@@ -80,6 +80,57 @@ blockquote {
   margin: 0 2rem;
 }
 
+.center {
+  text-align: center;
+}
+
+.image-wrapper {
+  text-align: center;
+}
+
+.image-wrapper img {
+  max-height: 500px;
+}
+
+.screenshot-wrapper {
+  margin-bottom: 1rem;
+}
+
+.screenshot-wrapper img {
+  border-radius: 8px;
+  background: rgb(14, 14, 14);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.iphone-wrapper {
+  padding: 15px;
+  background: rgb(10, 10, 10);
+  margin: 2rem auto;
+  border-radius: 50px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15),
+    inset -2px -3px 10px rgba(255, 255, 255, 0.3),
+    inset -2px -5px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.iphone-wrapper.white {
+  background: #fff;
+}
+
+.iphone-wrapper video,
+.iphone-wrapper img {
+  margin: 0;
+  border-radius: 35px;
+  height: 600px;
+  max-width: 292px;
+}
+
+.desc-wrapper {
+  text-align: center;
+  line-height: 1.5rem;
+  margin-bottom: 3rem;
+}
+
 .youtube-embed {
   background: black;
   margin: 30px 0;
