@@ -3,6 +3,11 @@ import {reloadRoutes} from 'react-static/node'
 import jdown from 'jdown'
 import chokidar from 'chokidar'
 import {ServerStyleSheet} from 'styled-components'
+import marked from 'marked'
+
+const renderer = new marked.Renderer()
+renderer.link = (href, title, text) =>
+  `<a target="_blank" href="${href}" title="${title}">${text}</a>`
 
 import config from './config.json'
 
@@ -12,7 +17,9 @@ export default {
   preact: true,
   siteRoot: 'https://timo.sh',
   getRoutes: async () => {
-    const {projects, achievements, about, contact} = await jdown('content')
+    const {projects, achievements, about, contact} = await jdown('content', {
+      renderer
+    })
 
     return [
       {

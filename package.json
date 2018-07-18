@@ -10,8 +10,9 @@
   "dependencies": {
     "chokidar": "2.0.3",
     "dayjs": "^1.6.10",
-    "htmr": "0.6.3",
+    "htmr": "^0.7.0",
     "jdown": "^0.6.4",
+    "marked": "^0.4.0",
     "polished": "^1.9.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

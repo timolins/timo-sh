@@ -4393,9 +4393,9 @@ htmlparser2@~3.3.0:
     domutils "1.1"
     readable-stream "1.0"
 
-htmr@0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/htmr/-/htmr-0.6.3.tgz#6aa46622448c623d62c5dcaa059188ef1ce29ed1"
+htmr@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/htmr/-/htmr-0.7.0.tgz#ddaf465a27d88582963f4b35495b0153001a51ff"
   dependencies:
     html-entities "^1.2.1"
     posthtml-parser "^0.4.0"
@@ -5464,6 +5464,10 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+marked@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.4.0.tgz#9ad2c2a7a1791f10a852e0112f77b571dce10c66"
 
 marked@~0.3.9:
   version "0.3.19"
