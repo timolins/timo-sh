@@ -1,3 +1,3 @@
-# This is a text about me
+# Hey, I'm Timo!
 
-Hello and welcome to my work in progress page 🇦🇹
+### I'm passionate about JavaScript, Design and Film Making.

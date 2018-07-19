@@ -18,6 +18,7 @@ export default {
   siteRoot: 'https://timo.sh',
   getRoutes: async () => {
     const {projects, achievements, about, contact} = await jdown('content', {
+      assets: {output: './public', png: {quality: '85'}},
       renderer
     })
 

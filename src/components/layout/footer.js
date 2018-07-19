@@ -11,6 +11,10 @@ const Footer = styled.footer`
 export default () => (
   <Footer>
     © {new Date().getFullYear()} Timo Lins{' · '}
+    <a href="https://github.com/timolins">GitHub</a>
+    {' · '}
+    <a href="https://twitter.com/timolins">Twitter</a>
+    {' · '}
     <a href="https://github.com/timolins/timo-sh">Source</a>
   </Footer>
 )

@@ -1,7 +1,7 @@
 ---
 title:  Microsoft Vulnerability
 date: 2013-07-20
-icon: /icons/lock.svg
+icon: lock
 ---
 
-Test
+Reported a security vulnerability on microsoft.com – [Reference](https://technet.microsoft.com/en-us/security/cc308575.aspx)

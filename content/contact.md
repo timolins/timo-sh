@@ -1,3 +1,3 @@
-# This is what we're all about.
+# I'm available for hire.
 
-This text is still in progress.
+If you are interested in working with me, feel free to drop me a line at me@timo.sh.

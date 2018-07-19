@@ -22,14 +22,14 @@ export default () => (
     <Wrapper big margin>
       <section>
         <h2>My Work</h2>
-        <h3>Things I Have Done in the past</h3>
+        <h3>Things I Have Made in the Past</h3>
         <Projects />
       </section>
     </Wrapper>
     <Wrapper margin>
       <section>
         <h2>My Achievements</h2>
-        <h3>Dere</h3>
+        <h3>Things I Have Achieved</h3>
         <Achievements />
       </section>
     </Wrapper>
