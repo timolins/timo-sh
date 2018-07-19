@@ -45,7 +45,7 @@ export default withRouteData(({project, tags}) => (
         </TitleWrapper>
         <Tags tags={tags} />
         <br />
-        {convert(project.contents)}
+        <div dangerouslySetInnerHTML={{__html: project.contents}} />
       </Content>
     </Wrapper>
   </ScrollToTop>
