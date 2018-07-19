@@ -10,7 +10,7 @@ import config from '../../config.json'
 const getEmail = () => {}
 
 export default withRouteData(({contact}) => (
-  <Wrapper>
+  <Wrapper margin>
     <Head>
       <title>{config.name} ~ Contact</title>
     </Head>

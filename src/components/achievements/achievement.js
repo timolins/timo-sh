@@ -40,6 +40,7 @@ const IconWrapper = styled.div`
 
 const ContentWrapper = styled.div`
   flex: 2;
+  line-height: 1.4rem;
 `
 
 const DateWrapper = styled.div`
