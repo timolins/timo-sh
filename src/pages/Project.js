@@ -35,7 +35,7 @@ export default withRouteData(({project, tags}) => (
     <Wrapper>
       <Head>
         <title>
-          {config.name} ~ {project.title}
+          {project.title} ~ {config.name}
         </title>
       </Head>
       <Content>

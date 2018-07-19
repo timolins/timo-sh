@@ -14,7 +14,7 @@ import config from '../../config.json'
 export default () => (
   <div>
     <Head>
-      <title>{`${config.name} ~ ${config.subtitle}`}</title>
+      <title>{`${config.name} - ${config.subtitle}`}</title>
     </Head>
     <Wrapper darken>
       <Header />

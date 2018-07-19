@@ -72,7 +72,7 @@ export default {
       return (
         <Html>
           <Head>
-            <title>{`${config.name} ~ ${config.subtitle}`}</title>
+            <title>{`${config.name} - ${config.subtitle}`}</title>
             <meta charSet="UTF-8" />
             <meta
               name="viewport"
