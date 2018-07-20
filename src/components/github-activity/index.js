@@ -83,7 +83,7 @@ export default class GithubStars extends React.Component {
     return (
       <GithubReposWrapper>
         <GithubRepos
-          title="Repos I contributed to"
+          title="Repos I Contributed to"
           link={`https://github.com/${githubUsername}`}
           repos={repositoriesContributedTo.nodes.reverse()}
           quantity={quantity}
@@ -91,7 +91,7 @@ export default class GithubStars extends React.Component {
         />
         <Seperator />
         <GithubRepos
-          title="Repos I recently starred"
+          title="Repos I Recently Starred"
           link={`https://github.com/${githubUsername}?tab=stars`}
           repos={starredRepositories.nodes.reverse()}
           quantity={quantity}

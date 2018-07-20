@@ -118,7 +118,7 @@ blockquote {
 
 .iphone-wrapper video,
 .iphone-wrapper img {
-  margin: 0;
+  margin: 0 !important;
   border-radius: 35px;
   height: 600px;
   max-width: 292px;
