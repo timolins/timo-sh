@@ -5,6 +5,7 @@ image: /logos/kreuz.svg
 color: rgb(255, 68, 57)
 desc: Tools & apps for paramedics working at the Austrian Red Cross
 flex: 2
+date: 2018-11-10
 types: code, design
 tags: React Native, Telegram, Node.js
 slug: kreuz

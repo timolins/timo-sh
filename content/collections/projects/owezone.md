@@ -3,7 +3,7 @@ title: owe.zone
 desc: Get your money back with a personal link.
 tags: React, Next.js, Koa, Brand
 types: code, design
-date: 2016.08.25
+date: 2016-08-25
 slug: owezone
 ---
 
