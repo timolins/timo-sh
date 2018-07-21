@@ -8,7 +8,7 @@ import ScrollToTop from '../components/utils/scroll-to-top'
 import DateText from '../components/utils/date-text'
 import Tags from '../components/utils/tags'
 
-import config from '../../config.json'
+import config from '../../config.js'
 
 const Content = styled.div`
   padding-top: 4rem;

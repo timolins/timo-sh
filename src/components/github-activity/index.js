@@ -5,7 +5,9 @@ import GithubRepos from './github-repos.js'
 import GithubReposWrapper from './github-repos-wrapper.js'
 import Seperator from '../utils/seperator.js'
 
-import {githubToken, githubUsername} from '../../../config.json'
+import config from '../../../config.js'
+
+const {githubToken, githubUsername} = config
 
 const quantity = 5
 

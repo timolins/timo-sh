@@ -9,7 +9,7 @@ import GithubActivity from '../components/github-activity/index.js'
 import Projects from '../components/projects/index.js'
 import Achievements from '../components/achievements/index.js'
 
-import config from '../../config.json'
+import config from '../../config.js'
 
 export default () => (
   <div>

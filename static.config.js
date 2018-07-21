@@ -9,7 +9,7 @@ const renderer = new marked.Renderer()
 renderer.link = (href, title, text) =>
   `<a target="_blank" href="${href}" title="${title}">${text}</a>`
 
-import config from './config.json'
+import config from './config.js'
 
 chokidar.watch('content').on('all', () => reloadRoutes())
 
