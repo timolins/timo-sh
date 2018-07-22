@@ -12,6 +12,10 @@ const Portrait = styled.img`
   width: 200px;
   height: 200px;
   background: #ddd;
+  @media (max-width: 600px) {
+    width: 150px;
+    height: 150px;
+  }
 `
 
 export default ({contents}) => (
