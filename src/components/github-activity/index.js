@@ -1,26 +1,20 @@
 import React from 'react'
+import {withRouteData} from 'react-static'
 import 'whatwg-fetch'
 
 import GithubRepos from './github-repos.js'
 import GithubReposWrapper from './github-repos-wrapper.js'
 import Seperator from '../utils/seperator.js'
 
-import config from '../../../config.js'
+import {githubUsername} from '../../../config.json'
 
-const {githubToken, githubUsername} = config
-
-const quantity = 5
-
+const QUANTITY = 5
 const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql'
-const headers = {
-  'Content-Type': 'application/json',
-  Authorization: `Bearer ${githubToken}`
-}
 
 const query = `
 query {
   user (login: "${githubUsername}") {
-    repositoriesContributedTo(last: ${quantity}, privacy: PUBLIC, includeUserRepositories: true, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY]) {
+    repositoriesContributedTo(last: ${QUANTITY}, privacy: PUBLIC, includeUserRepositories: true, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY]) {
       nodes {
         id
         name
@@ -31,7 +25,7 @@ query {
         }
       }
     }
-    starredRepositories(last: ${quantity}) {
+    starredRepositories(last: ${QUANTITY}) {
       nodes {
         id
         name
@@ -45,7 +39,7 @@ query {
   }
 }`
 
-export default class GithubStars extends React.Component {
+class GithubStars extends React.Component {
   state = {
     isLoading: true,
     starredRepositories: {
@@ -63,7 +57,10 @@ export default class GithubStars extends React.Component {
   async fetchRepos() {
     const res = await fetch(GRAPHQL_ENDPOINT, {
       method: 'POST',
-      headers,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.props.githubToken}`
+      },
       body: JSON.stringify({query})
     })
     const {data} = await res.json()
@@ -88,7 +85,7 @@ export default class GithubStars extends React.Component {
           title="Repos I Contributed to"
           link={`https://github.com/${githubUsername}`}
           repos={repositoriesContributedTo.nodes.reverse()}
-          quantity={quantity}
+          quantity={QUANTITY}
           isLoading={isLoading}
         />
         <Seperator />
@@ -96,10 +93,12 @@ export default class GithubStars extends React.Component {
           title="Repos I Recently Starred"
           link={`https://github.com/${githubUsername}?tab=stars`}
           repos={starredRepositories.nodes.reverse()}
-          quantity={quantity}
+          quantity={QUANTITY}
           isLoading={isLoading}
         />
       </GithubReposWrapper>
     )
   }
 }
+
+export default withRouteData(GithubStars)

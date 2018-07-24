@@ -23,6 +23,7 @@
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
+    "dotenv": "^6.0.0",
     "eslint-config-react-tools": "1.x.x",
     "serve": "^9.1.1"
   }

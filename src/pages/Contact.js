@@ -5,7 +5,7 @@ import {Head} from 'react-static'
 
 import Wrapper from '../components/utils/wrapper.js'
 
-import config from '../../config.js'
+import config from '../../config.json'
 
 const getEmail = () => {}
 

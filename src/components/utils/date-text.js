@@ -2,9 +2,7 @@ import React from 'react'
 import dayjs from 'dayjs'
 import styled from 'styled-components'
 
-import config from '../../../config.js'
-
-const {birthday} = config
+import {birthday} from '../../../config.json'
 
 const Light = styled.span`
   opacity: 0.5;

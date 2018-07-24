@@ -5,11 +5,13 @@ import chokidar from 'chokidar'
 import {ServerStyleSheet} from 'styled-components'
 import marked from 'marked'
 
+require('dotenv').config() // Load env
+
 const renderer = new marked.Renderer()
 renderer.link = (href, title, text) =>
   `<a target="_blank" href="${href}" title="${title}">${text}</a>`
 
-import config from './config.js'
+import config from './config.json'
 
 chokidar.watch('content').on('all', () => reloadRoutes())
 
@@ -29,6 +31,7 @@ export default {
         getData: () => ({
           about,
           achievements,
+          githubToken: process.env.GITHUB_TOKEN,
           projects: projects.map(project => ({
             ...project,
             types: project.types.split(', ')
