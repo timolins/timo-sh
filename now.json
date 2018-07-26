@@ -1,7 +1,9 @@
 {
   "type": "static",
   "alias": "timo.sh",
-  "env": {
-    "GITHUB_TOKEN": "@timo-sh-github"
+  "build": {
+    "env": {
+      "GITHUB_TOKEN": "@timo-sh-github"
+    }
   }
 }

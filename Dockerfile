@@ -12,6 +12,7 @@ RUN apk add --update \
     nasm
 RUN yarn
 COPY . .
+ARG GITHUB_TOKEN
 RUN yarn build \
  && mv ./public/content ./dist/content \
  && mv ./dist /public
