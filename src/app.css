@@ -116,12 +116,12 @@ blockquote {
   background: #fff;
 }
 
-.iphone-wrapper video,
-.iphone-wrapper img {
+.iphone-wrapper > * {
+  overflow: hidden;
   margin: 0 !important;
   border-radius: 35px;
-  height: 600px;
-  max-width: 292px;
+  height: 597px;
+  width: 276px;
 }
 
 .desc-wrapper {

@@ -5,7 +5,7 @@ image: /logos/kreuz.svg
 color: rgb(255, 68, 57)
 desc: Tools & apps for paramedics working at the Austrian Red Cross
 flex: 2
-date: 2018-11-10
+date: 2017-11-10
 types: code, design
 tags: React Native, Telegram, Node.js
 slug: kreuz
@@ -67,7 +67,9 @@ The information was most relevant on the go – so a mobile app would suit the n
 
 <div class="center">
   <div class="iphone-wrapper">
-    <video loop autoplay src="./assets/kreuz-live-map.mp4"></video>
+    <div>
+    <iframe src="https://streamable.com/s/wqori/uaugjt" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
 
