@@ -4,16 +4,16 @@ import jdown from 'jdown'
 import chokidar from 'chokidar'
 import {ServerStyleSheet} from 'styled-components'
 import marked from 'marked'
-
-require('dotenv').config() // Load env
-
-const renderer = new marked.Renderer()
-renderer.link = (href, title, text) =>
-  `<a target="_blank" href="${href}" title="${title}">${text}</a>`
+import dotenv from 'dotenv'
 
 import config from './config.json'
 
+const renderer = new marked.Renderer()
+
+renderer.link = (href, title, text) =>
+  `<a target="_blank" href="${href}" title="${title}">${text}</a>`
 chokidar.watch('content').on('all', () => reloadRoutes())
+dotenv.config()
 
 export default {
   preact: true,
