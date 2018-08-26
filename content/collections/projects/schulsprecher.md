@@ -37,14 +37,14 @@ One day after the election, Andreas was called to the principal's office. They t
 
 Now that he was indeed our school representative, I had to get to work and make the promised platform happen.
 
-To make it as good as possible, I spent a lot of time on that project for two weeks. [Meteor](https://meteor.com) helped to make it come to life within that a time frame. Its real-time capabilities were also a nice bonus.
+To make it as good as possible, I spent a lot of time on that project for two weeks. [Meteor](https://meteor.com) helped to make it come to life within that time frame. Its real-time capabilities were also a nice bonus.
 
 <div class="screenshot-wrapper">
 ![The landing page of the platform](./assets/schulsprecher-landing.png)
 _The landing page – everyone with a school email address could sign up_
 </div>
 
-After logging in, you were able to take participate in the current **poll**, submit or **vote for suggestions** and see the projects Andreas is working on. This way all students were able to **share their ideas**, and get information about the current progress. Even if something wasn't possible to achieve, the students got to know why that's case.
+After logging in, you were able to take participate in the current **poll**, submit or **vote for suggestions** and see the projects Andreas is working on. This way all students were able to **share their ideas**, and get information about the current progress. Even if something wasn't possible to achieve, the students got to know why that's the case.
 
 <div class="screenshot-wrapper">
 ![The dashboard to do the voting](./assets/schulsprecher-dashboard.png)
