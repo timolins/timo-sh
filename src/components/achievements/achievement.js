@@ -59,7 +59,7 @@ const ContentWrapper = styled.div`
 `
 
 const DateWrapper = styled.div`
-  border-left: 1px solid #eee;
+  border-left: 1px solid var(--outline);
   height: 50px;
   width: 80px;
   align-items: center;

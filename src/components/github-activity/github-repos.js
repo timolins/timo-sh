@@ -24,7 +24,7 @@ const pulse = keyframes`
 
 const RepoPlaceholder = styled.div`
   height: 4rem;
-  background: #eee;
+  background: var(--outline);
   border-radius: 3px;
   margin: 3rem 0;
   animation: ${pulse} 1s linear infinite;

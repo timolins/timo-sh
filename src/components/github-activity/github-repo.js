@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Light = styled.span`
-  opacity: 0.5;
+  opacity: var(--faded);
 `
 
 const Repo = styled.div`

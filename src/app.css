@@ -5,11 +5,15 @@ body {
   margin: 0;
   padding: 0;
   color: rgb(10, 10, 10);
+
+  --outline: #eee;
+  --link: #0366d6;
+  --faded: 0.6;
 }
 
 a {
   text-decoration: none;
-  color: #0366d6;
+  color: var(--link);
   opacity: 0.9;
 }
 
@@ -33,7 +37,7 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.6);
+  opacity: var(--faded);
   margin: 0.2rem 0 1rem;
   font-weight: 500;
 }
@@ -71,7 +75,7 @@ code:after {
   bottom: 0;
   left: -3px;
   border-radius: 3px;
-  background: #eee;
+  background: var(--outline);
 }
 
 blockquote {

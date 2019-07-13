@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { birthday } from '../../../config.json'
 
 const Light = styled.span`
-  opacity: 0.5;
+  opacity: var(--faded);
 `
 
 const Text = styled.div`

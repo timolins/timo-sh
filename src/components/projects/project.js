@@ -19,7 +19,7 @@ const Project = styled.div`
   margin: 0 10px 10px 0;
   flex: ${p => p.flex || 1};
   order: ${p => -(p.flex || 0)};
-  box-shadow: inset 0 0 0 1px #eee;
+  box-shadow: inset 0 0 0 1px var(--outline);
   border-radius: 6px;
   position: relative;
   overflow: hidden;
@@ -44,7 +44,8 @@ const ImageWrapper = styled(Link)`
   background-color: white;
   border-radius: 6px 6px 0 0;
   background: ${p => (p.color ? tint(0.05, p.color) : '#FFF')};
-  box-shadow: inset 0 0 0 1px ${p => (p.color ? tint(0.1, p.color) : '#EEE')};
+  box-shadow: inset 0 0 0 1px
+    ${p => (p.color ? tint(0.1, p.color) : 'var(--outline)')};
   justify-content: center;
   align-items: center;
   opacity: 1;
@@ -61,7 +62,7 @@ const DescWrapper = Wrapper.extend`
   ${p => p.featured && 'flex: 1.2'};
 `
 const Desc = styled.div`
-  opacity: 0.7;
+  opacity: var(--faded);
   font-size: 0.9rem;
 `
 
