@@ -64,7 +64,7 @@ export default props => (
       <div>{props.children}</div>
     </ContentWrapper>
     <DateWrapper>
-      <DateText date={props.date} />
+      <DateText date={props.date} endDate={props.endDate} />
     </DateWrapper>
   </Achievement>
 )
