@@ -20,11 +20,14 @@ const Wrapper = styled.div`
   @media (max-width: 600px) {
     ${p => p.margin && 'margin: 2rem auto 4rem'};
   }
+  @media print {
+    ${p => p.pageBreak && 'page-break-after: always;'}
+  }
 `
 
 export default props => {
   const wrapper = (
-    <Wrapper margin={props.margin} big={props.big}>
+    <Wrapper margin={props.margin} big={props.big} pageBreak={props.pageBreak}>
       {props.children}
     </Wrapper>
   )

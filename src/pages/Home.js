@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Head} from 'react-static'
+import { Head } from 'react-static'
 
 import Wrapper from '../components/utils/wrapper.js'
 
@@ -19,14 +19,14 @@ export default () => (
     <Wrapper darken>
       <Header />
     </Wrapper>
-    <Wrapper big margin>
+    <Wrapper big margin pageBreak>
       <section>
         <h2>My Work</h2>
         <h3>Things I Have Made in the Past</h3>
         <Projects />
       </section>
     </Wrapper>
-    <Wrapper margin>
+    <Wrapper margin pageBreak>
       <section>
         <h2>My Achievements</h2>
         <h3>Things I Have Achieved</h3>
