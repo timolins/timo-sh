@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Router, Link} from 'react-static'
 
 const Tags = styled.div`
   margin: 1rem 0;
@@ -15,5 +14,11 @@ const Tag = styled.span`
   padding: 5px;
 `
 
-export default ({tags}) =>
-  tags ? <Tags>{tags.map(tag => <Tag key={tag}>{tag}</Tag>)}</Tags> : null
+export default ({ tags }) =>
+  tags ? (
+    <Tags>
+      {tags.map(tag => (
+        <Tag key={tag}>{tag}</Tag>
+      ))}
+    </Tags>
+  ) : null
