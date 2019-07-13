@@ -1,10 +1,21 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import Icon from './icon.js'
 
 import DateText from '../utils/date-text.js'
 
+const enter = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+
+  }
+`
 const Achievement = styled.div`
   margin: 1.5rem 0;
   max-width: 900px;
@@ -17,6 +28,10 @@ const Achievement = styled.div`
   overflow: hidden;
   p {
     margin: 0.5rem 0;
+  }
+  @media screen {
+    animation: ${enter} 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    animation-delay: ${p => p.delay || 0}ms;
   }
 `
 
