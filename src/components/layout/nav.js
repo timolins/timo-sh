@@ -17,6 +17,7 @@ const Nav = styled.nav`
     line-height: 1.5rem;
   }
   @media print {
+    align-items: flex-start;
     margin: 1rem 0 2rem;
   }
 `
@@ -33,8 +34,8 @@ export default props => (
       <br />
       timo.sh
     </Link>
-    <Link className="print-hidden" to="/contact">
-      <Button>Let's talk</Button>
-    </Link>
+    <Button className="print-hidden" to="/contact">
+      Let's talk
+    </Button>
   </Nav>
 )

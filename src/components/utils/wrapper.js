@@ -31,6 +31,16 @@ const Wrapper = styled.div`
       display: none;
     }
   }
+  @media (max-width: 600px) {
+    .mobile-hidden {
+      display: none;
+    }
+  }
+  @media (min-width: 600px) {
+    .desktop-hidden {
+      display: none;
+    }
+  }
 `
 
 export default props => {

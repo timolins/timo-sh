@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouteData, Head} from 'react-static'
+import { withRouteData, Head } from 'react-static'
 import styled from 'styled-components'
 import convert from 'htmr'
 
@@ -30,7 +30,7 @@ const TitleWrapper = styled.div`
   flex-direction: row;
 `
 
-export default withRouteData(({project, tags}) => (
+export default withRouteData(({ project, tags }) => (
   <ScrollToTop>
     <Wrapper>
       <Head>
@@ -43,9 +43,10 @@ export default withRouteData(({project, tags}) => (
           <h2>{project.title}</h2>
           <DateText alignRight date={project.date} />
         </TitleWrapper>
+        <div />
         <Tags tags={tags} />
         <br />
-        <div dangerouslySetInnerHTML={{__html: project.contents}} />
+        <div dangerouslySetInnerHTML={{ __html: project.contents }} />
       </Content>
     </Wrapper>
   </ScrollToTop>

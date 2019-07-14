@@ -3,7 +3,28 @@ import styled from 'styled-components'
 import { tint } from 'polished'
 import { Link } from 'react-static'
 
+import Button from '../utils/button.js'
+
 import Icon from './icon'
+
+const LinkButton = styled(Button)`
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  transition: 200ms ease-out;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateX(-15px);
+`
+
+const Arrow = styled(Link)`
+  opacity: var(--faded);
+  color: var(--link);
+  display: inline-block;
+  transition-property: transform;
+  transition: 200ms ease-out;
+  transform: translateX(0);
+`
 
 const Project = styled.div`
   min-height: ${p => (p.featured ? '320px' : '120px')};
@@ -30,6 +51,11 @@ const Project = styled.div`
   &:hover {
     background: rgb(250, 250, 250);
   }
+  a {
+    &:hover ${Arrow}, &:active ${Arrow} {
+      transform: translateX(3px);
+    }
+  }
 `
 
 const Title = styled.span`
@@ -41,6 +67,7 @@ const Title = styled.span`
 const ImageWrapper = styled(Link)`
   flex: 3;
   display: flex;
+  position: relative;
   background-color: white;
   border-radius: 6px 6px 0 0;
   background: ${p => (p.color ? tint(0.05, p.color) : '#FFF')};
@@ -49,6 +76,10 @@ const ImageWrapper = styled(Link)`
   justify-content: center;
   align-items: center;
   opacity: 1;
+  &:hover ${LinkButton}, &:active ${LinkButton} {
+    opacity: 1;
+    transform: translateX(0);
+  }
   &:hover {
     opacity: 1;
   }
@@ -76,25 +107,45 @@ const Iconbar = styled.div`
   justify-content: flex-end;
 `
 
+const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 export default props => (
   <Project flex={props.flex} featured={props.featured}>
     {props.image && (
       <ImageWrapper to={`/${props.slug}/`} color={props.color}>
         <img src={props.image} alt={props.title} />
+        {props.featured ? (
+          <LinkButton
+            className="mobile-hidden"
+            color={props.color}
+            to={`/${props.slug}/`}
+          >
+            Read →
+          </LinkButton>
+        ) : (
+          <span />
+        )}
       </ImageWrapper>
     )}
     <DescWrapper featured={props.featured}>
       <Link scrollToTop={true} to={`/${props.slug}/`}>
-        <Title color={props.color}>{props.title}</Title>
+        <Title color={props.color}>{props.title}</Title>{' '}
+        <Arrow className={props.featured && 'desktop-hidden'}>→</Arrow>
       </Link>
       <Desc>{props.desc}</Desc>
     </DescWrapper>
     <Wrapper>
-      <Iconbar>
-        {props.types.map(type => (
-          <Icon key={type} type={type} />
-        ))}
-      </Iconbar>
+      <Footer>
+        <Iconbar>
+          {props.types.map(type => (
+            <Icon key={type} type={type} />
+          ))}
+        </Iconbar>
+      </Footer>
     </Wrapper>
   </Project>
 )
