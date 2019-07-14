@@ -1,6 +1,7 @@
 ---
-title:  Microsoft Vulnerability
+title: Microsoft Vulnerability
 date: 2013-07-20
+hidden: true
 icon: lock
 ---
 
