@@ -151,17 +151,7 @@ blockquote {
   }
 }
 
-@media screen {
-  .screen-hidden {
-    display: none;
-  }
-}
-
 @media print {
-  .print-hidden {
-    display: none;
-  }
-
   body {
     font-size: 75%;
     --outline: #cecece;

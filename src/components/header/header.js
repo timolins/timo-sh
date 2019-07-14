@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   @media print {
-    margin: 0 0 3rem;
+    margin: 0 0 2.5rem;
     align-items: flex-start;
   }
 `

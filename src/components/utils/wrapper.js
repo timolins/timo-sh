@@ -22,6 +22,14 @@ const Wrapper = styled.div`
   }
   @media print {
     ${p => p.pageBreak && 'page-break-after: always;'}
+    .print-hidden {
+      display: none;
+    }
+  }
+  @media screen {
+    .screen-hidden {
+      display: none;
+    }
   }
 `
 

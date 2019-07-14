@@ -1,8 +1,8 @@
 import React from 'react'
-import {reloadRoutes} from 'react-static/node'
+import { reloadRoutes } from 'react-static/node'
 import jdown from 'jdown'
 import chokidar from 'chokidar'
-import {ServerStyleSheet} from 'styled-components'
+import { ServerStyleSheet } from 'styled-components'
 import marked from 'marked'
 import dotenv from 'dotenv'
 
@@ -16,10 +16,9 @@ chokidar.watch('content').on('all', () => reloadRoutes())
 dotenv.config()
 
 export default {
-  preact: true,
   siteRoot: 'https://timo.sh',
   getRoutes: async () => {
-    const {projects, achievements, about, contact} = await jdown('content', {
+    const { projects, achievements, about, contact } = await jdown('content', {
       assets: {
         output: './public',
         png: {
@@ -78,7 +77,7 @@ export default {
   },
   Document: class CustomHtml extends React.Component {
     render() {
-      const {Html, Head, Body, children, renderMeta, siteData} = this.props
+      const { Html, Head, Body, children, renderMeta, siteData } = this.props
 
       return (
         <Html>
@@ -90,6 +89,7 @@ export default {
               content="width=device-width, initial-scale=1"
             />
             <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+            <style>{`@media screen {.screen-hidden {display: none;}} @media print {.print-hidden {display: none;}}`}</style>
             {renderMeta.styleTags}
           </Head>
           <Body>{children}</Body>
