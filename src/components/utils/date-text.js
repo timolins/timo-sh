@@ -22,7 +22,7 @@ const Text = styled.div`
   }
 `
 
-const HiddenText = Text.extend`
+const HiddenText = styled(Text)`
   ${p => p.alignRight && 'right: 0'};
   transform: translateY(-30px);
   opacity: 0;

@@ -19,7 +19,7 @@
     "react-hot-loader": "^4.0.0-beta.21",
     "react-router": "^4.2.0",
     "react-static": "^5.9.7",
-    "styled-components": "^3.3.2",
+    "styled-components": "^4.3.2",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {

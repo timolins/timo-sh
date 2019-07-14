@@ -61,7 +61,7 @@ const Wrapper = styled.div`
   padding: 10px;
 `
 
-const DescWrapper = Wrapper.extend`
+const DescWrapper = styled(Wrapper)`
   ${p => p.featured && 'flex: 1.2'};
 `
 const Desc = styled.div`
