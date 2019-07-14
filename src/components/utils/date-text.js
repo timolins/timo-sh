@@ -54,7 +54,8 @@ const Wrapper = styled.div`
 
 const DateText = ({ date, endDate, light, alignRight }) => {
   const day = dayjs(date)
-  const isCurrent = (endDate || '').toLowerCase() === 'current'
+  const isCurrent =
+    typeof endDate === 'string' && endDate.toLowerCase() === 'current'
   const endDay = dayjs(isCurrent ? new Date() : endDate)
 
   const hasEndDate = endDate && endDay.isValid()
