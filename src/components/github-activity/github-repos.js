@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, {keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import GithubRepo from './github-repo.js'
 
@@ -39,9 +39,9 @@ const Link = styled.a`
   font-size: 0.8rem;
 `
 
-export default ({repos, title, link, isLoading, quantity}) => {
+export default ({ repos, title, link, isLoading, quantity, className }) => {
   return (
-    <GithubRepos>
+    <GithubRepos className={className}>
       <h3>{title}</h3>
       <div>
         {isLoading
@@ -58,7 +58,7 @@ export default ({repos, title, link, isLoading, quantity}) => {
               />
             ))}
       </div>
-      <Link href={link} target="_blank">
+      <Link className="print-hidden" href={link} target="_blank">
         View more on <b>GitHub</b> →
       </Link>
     </GithubRepos>

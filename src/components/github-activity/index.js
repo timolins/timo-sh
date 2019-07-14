@@ -1,12 +1,12 @@
 import React from 'react'
-import {withRouteData} from 'react-static'
+import { withRouteData } from 'react-static'
 import 'whatwg-fetch'
 
 import GithubRepos from './github-repos.js'
 import GithubReposWrapper from './github-repos-wrapper.js'
 import Seperator from '../utils/seperator.js'
 
-import {githubUsername} from '../../../config.json'
+import { githubUsername } from '../../../config.json'
 
 const QUANTITY = 5
 const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql'
@@ -61,10 +61,10 @@ class GithubStars extends React.Component {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${this.props.githubToken}`
       },
-      body: JSON.stringify({query})
+      body: JSON.stringify({ query })
     })
-    const {data} = await res.json()
-    const {starredRepositories, repositoriesContributedTo} = data.user
+    const { data } = await res.json()
+    const { starredRepositories, repositoriesContributedTo } = data.user
 
     this.setState({
       starredRepositories,
@@ -90,6 +90,7 @@ class GithubStars extends React.Component {
         />
         <Seperator />
         <GithubRepos
+          className="print-hidden"
           title="Repos I Recently Starred"
           link={`https://github.com/${githubUsername}?tab=stars`}
           repos={starredRepositories.nodes.reverse()}

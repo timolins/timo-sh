@@ -46,20 +46,6 @@ ul {
   line-height: 2rem;
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.3rem;
-  }
-  h2 {
-    font-size: 1.7rem;
-  }
-  h3 {
-    font-size: 1.3rem;
-    margin: 0.2rem 0 1rem;
-    font-weight: 500;
-  }
-}
-
 code {
   position: relative;
   display: inline-block;
@@ -149,4 +135,54 @@ blockquote {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+    margin: 0.2rem 0 1rem;
+    font-weight: 500;
+  }
+}
+
+@media screen {
+  .screen-hidden {
+    display: none;
+  }
+}
+
+@media print {
+  .print-hidden {
+    display: none;
+  }
+
+  body {
+    font-size: 75%;
+    --outline: #cecece;
+    --link: #002652;
+    --faded: 0.85;
+  }
+
+  h1 {
+    font-size: 18pt;
+    margin: 1rem 0 1rem;
+  }
+
+  h2 {
+    font-size: 14pt;
+    margin: 0.2rem 0 0.5rem;
+  }
+
+  h3 {
+    font-size: 12pt;
+
+    margin: 0.2rem 0 1rem;
+    font-weight: 500;
+  }
 }

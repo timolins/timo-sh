@@ -5,6 +5,14 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   text-align: center;
   margin: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media print {
+    margin: 0 0 3rem;
+    align-items: flex-start;
+  }
 `
 
 const Portrait = styled.img`
@@ -18,7 +26,7 @@ const Portrait = styled.img`
   }
 `
 
-export default ({contents}) => (
+export default ({ contents }) => (
   <Wrapper>
     <Portrait src="/portrait.jpg" alt="Portrait" />
     {convert(contents)}

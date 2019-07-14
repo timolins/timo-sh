@@ -15,13 +15,22 @@ const Text = styled.div`
   transition-delay: 80ms;
   transform: translateY(0);
   opacity: 1;
+
+  @media print {
+    opacity: 1 !important;
+    transform: translateY(-15px) !important;
+  }
 `
 
 const HiddenText = Text.extend`
-  position: absolute;
   ${p => p.alignRight && 'right: 0'};
   transform: translateY(-30px);
   opacity: 0;
+
+  @media print {
+    opacity: 1;
+    transform: translateY(15px) !important;
+  }
 `
 
 const Wrapper = styled.div`

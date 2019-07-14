@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import {lighten, tint} from 'polished'
-import {Link} from 'react-static'
+import { tint } from 'polished'
+import { Link } from 'react-static'
 
 import Icon from './icon'
 
@@ -52,6 +52,9 @@ const ImageWrapper = styled(Link)`
   &:hover {
     opacity: 1;
   }
+  @media print {
+    box-shadow: inset 0 0 0 1px var(--outline);
+  }
 `
 
 const Wrapper = styled.div`
@@ -88,7 +91,9 @@ export default props => (
     </DescWrapper>
     <Wrapper>
       <Iconbar>
-        {props.types.map(type => <Icon key={type} type={type} />)}
+        {props.types.map(type => (
+          <Icon key={type} type={type} />
+        ))}
       </Iconbar>
     </Wrapper>
   </Project>

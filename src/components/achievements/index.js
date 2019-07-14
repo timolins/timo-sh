@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouteData} from 'react-static'
+import { withRouteData } from 'react-static'
 import convert from 'htmr'
 import styled from 'styled-components'
 
@@ -24,18 +24,20 @@ class Achievements extends React.Component {
     }))
   }
   render() {
-    const {achievements} = this.props
-    const {showHidden} = this.state
+    const { achievements } = this.props
+    const { showHidden } = this.state
 
-    const count = achievements.length
     const hiddenCount = achievements.filter(a => a.hidden).length
+
+    const sortedAchievements = [...achievements].sort(
+      (a1, a2) => new Date(a2.date) - new Date(a1.date)
+    )
 
     return (
       <AchievementsWrapper>
         <AchievementWrapper>
-          {achievements
-            .sort((a1, a2) => new Date(a1.date) < new Date(a2.date))
-            .filter(a => !a.hidden || showHidden)
+          {sortedAchievements
+            .map(a => ({ ...a, hidden: a.hidden && !showHidden }))
             .map(props => (
               <Achievement key={props.title} {...props}>
                 {convert(props.contents)}
@@ -43,7 +45,7 @@ class Achievements extends React.Component {
             ))}
         </AchievementWrapper>
         {hiddenCount > 0 && (
-          <Button onClick={this.toggleHidden}>
+          <Button className="print-hidden" onClick={this.toggleHidden}>
             {showHidden ? 'Show less ↑' : `Show ${hiddenCount} more ↓ `}
           </Button>
         )}

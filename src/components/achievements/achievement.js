@@ -18,9 +18,7 @@ const enter = keyframes`
 `
 const Achievement = styled.div`
   margin: 1.5rem 0;
-  max-width: 900px;
   width: 100%;
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -29,9 +27,14 @@ const Achievement = styled.div`
   p {
     margin: 0.5rem 0;
   }
+  display: ${p => (p.hidden ? 'none' : 'flex')};
   @media screen {
     animation: ${enter} 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     animation-delay: ${p => p.delay || 0}ms;
+  }
+  @media print {
+    display: flex;
+    margin: 1rem 0;
   }
 `
 
@@ -51,6 +54,10 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media print {
+    width: 50px;
+    height: 50px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -65,12 +72,15 @@ const DateWrapper = styled.div`
   align-items: center;
   display: flex;
   padding-left: 16px;
-  margin-left: 5px;
+  margin-left: 15px;
   justify-self: flex-end;
+  @media (max-width: 600px) {
+    margin-left: 5px;
+  }
 `
 
 export default props => (
-  <Achievement>
+  <Achievement hidden={props.hidden}>
     <IconWrapper>
       <Icon type={props.icon} />
     </IconWrapper>
