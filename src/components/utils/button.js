@@ -1,9 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { getLuminance, darken } from 'polished'
+import { Link } from 'react-static'
 
-const Button = styled.a`
+const style = css`
   position: relative;
   cursor: pointer;
+  font-size: 1em;
   color: ${p =>
     p.color && getLuminance(p.color) > 0.25
       ? darken(0.1, p.color)
@@ -18,8 +20,18 @@ const Button = styled.a`
     border-radius: 5px;
     background: ${p => p.color || 'var(--link)'};
     opacity: 0.1;
-    z-index: -1;
   }
+`
+const Button = styled.button`
+  ${style};
+  padding: 0;
+  font-size: 1rem;
+  border: none;
+  background: none;
+`
+
+export const LinkButton = styled(Link)`
+  ${style}
 `
 
 export default Button

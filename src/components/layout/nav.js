@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Router, Link } from 'react-static'
-import Button from '../utils/button.js'
+import { Link } from 'react-static'
+import { LinkButton } from '../utils/button.js'
 
 import Logo from './logo.js'
 
@@ -34,8 +34,8 @@ export default props => (
       <br />
       timo.sh
     </Link>
-    <Button className="print-hidden" to="/contact">
+    <LinkButton className="print-hidden" to="/contact">
       Let's talk
-    </Button>
+    </LinkButton>
   </Nav>
 )
