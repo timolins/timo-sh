@@ -21,6 +21,9 @@ const Content = styled.div`
   p {
     line-height: 1.5rem;
   }
+  strong {
+    font-weight: 600;
+  }
 `
 
 const TitleWrapper = styled.div`
