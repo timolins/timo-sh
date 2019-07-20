@@ -22,15 +22,13 @@ export default {
       assets: {
         output: './public',
         png: {
-          quality: '85'
+          quality: [0.8, 0.9]
         },
         jpg: {
           progressive: true
         }
-      },
-      renderer
+      }
     })
-
     return [
       {
         path: '/',
@@ -77,7 +75,7 @@ export default {
   },
   Document: class CustomHtml extends React.Component {
     render() {
-      const { Html, Head, Body, children, renderMeta, siteData } = this.props
+      const { Html, Head, Body, children, renderMeta } = this.props
 
       return (
         <Html>
@@ -89,7 +87,6 @@ export default {
               content="width=device-width, initial-scale=1"
             />
             <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-            <style>{`@media screen {.screen-hidden {display: none;}} @media print {.print-hidden {display: none;}}`}</style>
             {renderMeta.styleTags}
           </Head>
           <Body>{children}</Body>
