@@ -5,4 +5,4 @@ endDate: current
 icon: briefcase
 ---
 
-Worked as React/TypeScript developer at [d:code.it](https://dcodeit.com/)
+Worked as React/TypeScript developer at [d:code:it](https://dcodeit.com/)
