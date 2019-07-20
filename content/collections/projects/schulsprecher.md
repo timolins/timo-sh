@@ -24,9 +24,13 @@ We ended up using his satirical image for his school-wide election campaign. I p
 We also designed & printed out a couple of A0 sized posters, which were hung up all around school.
 
 <div class="image-wrapper">
+
 ![](./assets/schulsprecher-plakat.jpg)
+
 <br/>
+
 _One of the posters for the pre-election_
+
 </div>
 
 The domain _schulsprecher.biz_ pointed to the video at the time of the election – later on, it was used for the voting platform.
@@ -40,14 +44,18 @@ Now that he was indeed our school representative, I had to get to work and make 
 To make it as good as possible, I spent a lot of time on that project for two weeks. [Meteor](https://meteor.com) helped to make it come to life within that time frame. Its real-time capabilities were also a nice bonus.
 
 <div class="screenshot-wrapper">
+
 ![The landing page of the platform](./assets/schulsprecher-landing.png)
 _The landing page – everyone with a school email address could sign up_
+
 </div>
 
 After logging in, you were able to take participate in the current **poll**, submit or **vote for suggestions** and see the projects Andreas is working on. This way all students were able to **share their ideas**, and get information about the current progress. Even if something wasn't possible to achieve, the students got to know why that's the case.
 
 <div class="screenshot-wrapper">
+
 ![The dashboard to do the voting](./assets/schulsprecher-dashboard.png)
+
 </div>
 
 All that collected data could be managed and viewed from the admin panel. Every time Andreas went to a meeting with the school principal, he was able to show the importance of his demands by stating the numbers.

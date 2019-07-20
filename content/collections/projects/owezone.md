@@ -9,7 +9,7 @@ slug: owezone
 
 > **Holiday Group**
 
-> You: _Hey folks! Y'all still **owe me $7.9** for the pizza we had last week. 🍕_
+> You: _Hey folks! Y'all still **owe me \$7.9** for the pizza we had last week. 🍕_
 >
 > Jake: _Hit me with your **PayPal**_!
 >
@@ -24,8 +24,11 @@ Agreeing on a payment method while **splitting a bill shouldn't be hard**. Sure,
 Why not **combine all those services** into one personal link? That's where [**owe.zone**](https://owe.zone) comes in. Share your link to present all your payment providers in one place – append the amount and a name to it, to tell the other person what it's all about.
 
 <div class="screenshot-wrapper">
+
 ![My owe.zone page](./assets/owezone-profile-page.png)
+
 </div>
+
 _Screenshot of my owe.zone page_
 
 ### Background

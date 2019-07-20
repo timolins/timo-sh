@@ -12,8 +12,11 @@ Your colleges and you want to get something to eat, but you can't decide on wher
 CoinBot is an [open-source](https://github.com/timolins/coinbot) bot for the [Telegram Messenger](https://telegram.org/) which helps you (or a group) make random decisions. It supports multiple modes, like rolling dice or choosing a random item from a list.
 
 <div class="screenshot-wrapper">
+
 ![Coinbot Website](./assets/coinbot.png)
+
 </div>
+
 _Screenshot of the [CoinBot website](http://coinbot.timo.sh)_
 
 ### Motivation

@@ -16,28 +16,35 @@ slug: ps-tunnel
 <div class="youtube-embed">
   <iframe src="https://www.youtube.com/embed/MH6YCUzOW2I?showinfo=0&rel=0" allowfullscreen></iframe>
 </div>
+
 _The PS Tunnel promotion video. Made by the awesome [Leo Mühlfeld](https://leomuehlfeld.at)._
 
 ### Motivation
 
 Back in High School, some of my friends used to run Shopify stores. One of them complained about how painful it was to edit a large number of images from your store.
 
-* You had to **find the image** in your store
-* Click on it & **download it**
-* **Open** it in Photoshop
-* Make your changes
-* **Save** the new image
-* **Remove** the old image
-* **Update** the new image
-* Repeat
+- You had to **find the image** in your store
+- Click on it & **download it**
+- **Open** it in Photoshop
+- Make your changes
+- **Save** the new image
+- **Remove** the old image
+- **Update** the new image
+- Repeat
 
 That's a considerable amount of work for a straightforward task. And that's exactly the reason why I built PS Tunnel.
 
 <div class="center">
-  <div class="screenshot-wrapper" style="max-width: 300px; display: inline-block;">
-    ![Screenshot of PS Tunnel Photoshop extension](./assets/pstunnel-photoshop.png)
-  </div>
-  <div>_The Photoshop Extension for PS Tunnel_</div>
+<div class="screenshot-wrapper" style="max-width: 300px; display: inline-block;">
+
+![Screenshot of PS Tunnel Photoshop extension](./assets/pstunnel-photoshop.png)
+
+</div>
+<div>
+
+_The Photoshop Extension for PS Tunnel_
+
+</div>
 </div>
 </br>
 
