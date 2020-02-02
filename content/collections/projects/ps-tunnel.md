@@ -11,7 +11,7 @@ tags: React, Node.js, SaaS
 slug: ps-tunnel
 ---
 
-[PS Tunnel](https://apps.shopify.com/photoshop-tunnel) is an app for **Shopify** & **Photoshop** which enables you to **edit images** from your product catalog in Photoshop without the hassle. **With one click**, the selected image will open up in Photoshop. Once you are happy with your changes, hit save and PS Tunnel will replace the old image with the new one!
+[PS Tunnel](https://pstunnel.com) is an app for **Shopify** & **Photoshop** which enables you to **edit images** from your product catalog in Photoshop without the hassle. **With one click**, the selected image will open up in Photoshop. Once you are happy with your changes, hit save and PS Tunnel will replace the old image with the new one!
 
 <div class="youtube-embed">
   <iframe src="https://www.youtube.com/embed/MH6YCUzOW2I?showinfo=0&rel=0" allowfullscreen></iframe>
