@@ -1,7 +1,7 @@
 ---
 title: d:code:it Ltd.
 date: 2018-09-01
-endDate: current
+endDate: 2020-03-04
 icon: briefcase
 ---
 
