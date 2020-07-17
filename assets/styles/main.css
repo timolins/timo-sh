@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+body > div {
+  @apply text-gray-900 flex flex-col min-h-full flex-1 justify-between overflow-x-hidden;
+}
+
+input,
+button {
+  box-shadow: 0 0 0 0 rgba(16, 141, 255, 0.1);
+  transition: ease-in-out 80ms;
+  transition-property: box-shadow, background;
+}
+
+input:focus,
+button:focus {
+  @apply border-blue-500 outline-none;
+  box-shadow: 0 0 0 3px rgba(16, 141, 255, 0.5);
+}
