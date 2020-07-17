@@ -46,7 +46,7 @@ class Achievements extends React.Component {
         </AchievementWrapper>
         {hiddenCount > 0 && (
           <Button className="print-hidden" onClick={this.toggleHidden}>
-            {showHidden ? 'Show less ↑' : `Show ${hiddenCount} more ↓ `}
+            {showHidden ? 'Show less ↑' : `Show more ↓ `}
           </Button>
         )}
       </AchievementsWrapper>
