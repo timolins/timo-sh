@@ -1,3 +1,3 @@
-# I'm available for hire.
+# Hey there 👋
 
-If you are interested in working with me, feel free to drop me a line at me@timo.sh.
+Feel free to drop me a line at me@timo.sh or say hi on [Twitter](https://twitter.com/timolins).
