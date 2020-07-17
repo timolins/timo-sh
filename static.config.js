@@ -16,7 +16,7 @@ chokidar.watch('content').on('all', () => reloadRoutes())
 dotenv.config()
 
 export default {
-  siteRoot: 'https://timo.sh',
+  siteRoot: 'https://timo.netlify.app',
   getRoutes: async () => {
     const { projects, achievements, about, contact } = await jdown('content', {
       assets: {
