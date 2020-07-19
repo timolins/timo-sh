@@ -12,19 +12,19 @@ export const Hero: React.FC = () => (
         </p>
         <div className="max-w-sm md:mx-auto my-8 -ml-2">
           <a
-            className="mx-1 md:mx-2 py-1 px-2 rounded bg-blue-200 text-blue-700"
+            className="mx-1 md:mx-2 py-1 px-2 rounded bg-blue-200 hover:bg-blue-300 text-blue-700"
             href="https://twitter.com/timolins"
           >
             Twitter
           </a>
           <a
-            className="mx-1 md:mx-2 py-1 px-2 rounded bg-gray-300 text-gray-700"
+            className="mx-1 md:mx-2 py-1 px-2 rounded bg-gray-300 hover:bg-gray-400 text-gray-700"
             href="https://github.com/timolins"
           >
             GitHub
           </a>
           <a
-            className="mx-1 md:mx-2 py-1 px-2 rounded bg-pink-200 text-pink-700"
+            className="mx-1 md:mx-2 py-1 px-2 rounded bg-pink-200 hover:bg-pink-300 text-pink-700"
             href="https://dribbble.com/timolins"
           >
             Dribbble

@@ -12,11 +12,11 @@ const RepoList: React.FC<{
     <h2 className="text-2xl text-gray-600">{title}</h2>
     <ul>
       {repos.map(({ id, name, url, description, owner }) => (
-        <li
-          key={id}
-          className="my-4 py-4 px-4 -mx-4 hover:bg-gray-100 rounded-md"
-        >
-          <a href={url}>
+        <li key={id}>
+          <a
+            href={url}
+            className="block my-4 p-4 -mx-4 hover:bg-gray-100 rounded-md"
+          >
             <div>
               <span className="text-blue-400">{owner.login}/</span>
               <span className="text-blue-600">{name}</span>

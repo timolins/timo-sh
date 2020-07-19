@@ -50,6 +50,7 @@ const Project: React.FC<
   <div
     className={clsx(
       "border rounded-md overflow-hidden flex flex-col",
+      "hover:-translate-y-1 transform transition-transform ease-in-out duration-100",
       featured && "shadow-sm",
       className
     )}
@@ -60,10 +61,7 @@ const Project: React.FC<
           <a tabIndex={-1}>
             {images && images[0] && (
               <img
-                className={clsx(
-                  "absolute w-full h-full object-cover",
-                  "transform transition-transform duration-300 ease-in-out hover:scale-105"
-                )}
+                className={clsx("absolute w-full h-full object-cover")}
                 src={toNotionImageUrl(images[0].url)}
                 alt={title}
               />
@@ -89,7 +87,7 @@ const Project: React.FC<
       <div className="flex justify-between p-4">
         <div className="flex items-center">
           {types.map(type => (
-            <TypeBadge compact type={type} />
+            <TypeBadge key={type} compact type={type} />
           ))}
         </div>
         <Link href={`/work/${slug}`}>
@@ -121,13 +119,13 @@ export const Work: React.FC<{
     <div className="text-2xl text-gray-600">Things I Have Made in the Past</div>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
       {projects.slice(0, preview ? 3 : undefined).map(p => (
-        <Project featured {...p} />
+        <Project key={p.id} featured {...p} />
       ))}
     </div>
     {preview && (
       <div className="md:grid mt-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
         {projects.slice(3, 6).map(p => (
-          <Project className="hidden md:flex" {...p} />
+          <Project key={p.id} className="hidden md:flex" {...p} />
         ))}
         <div className="flex flex-col items-center justify-center text-center py-4">
           <div className="text-lg font-bold text-gray-700">
