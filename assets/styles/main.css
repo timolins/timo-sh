@@ -9,18 +9,28 @@ body > div {
 }
 
 input,
-button {
+button,
+a {
   box-shadow: 0 0 0 0 rgba(16, 141, 255, 0.1);
   transition: ease-in-out 80ms;
   transition-property: box-shadow, background;
 }
 
 input:focus,
-button:focus {
+button:focus,
+a:focus {
   @apply border-blue-500 outline-none;
   box-shadow: 0 0 0 3px rgba(16, 141, 255, 0.5);
 }
 
 .achievement .notion-text {
   @apply text-gray-600 pl-0;
+}
+
+.achievement .notion-link,
+.achievement .notion-text {
+  @apply break-normal;
+}
+.container {
+  @apply max-w-screen-lg;
 }

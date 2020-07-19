@@ -15,11 +15,8 @@ import { NotionRenderer } from "react-notion";
 
 const AchievementIcon: React.FC<{
   type: AchievementType;
-}> = ({ type }) => {
-  const props = {
-    width: 100,
-  };
-
+  className?: string;
+}> = ({ type, ...props }) => {
   switch (type) {
     case "award":
       return <Trophy {...props} />;
@@ -39,7 +36,7 @@ const AchievementRow: React.FC<AchievementProps> = ({
   blockMap,
 }) => (
   <div className="flex items-center my-8 achievement">
-    <AchievementIcon type={type} />
+    <AchievementIcon className="w-16 md:w-24" type={type} />
     <h4 className="flex-1 mx-4">
       <div className="font-semibold">{title}</div>
       <NotionRenderer blockMap={blockMap} />
@@ -57,7 +54,7 @@ export const Achievements: React.FC<{ achievements: Achievement[] }> = ({
 
   return (
     <div className="container my-16">
-      <div className="m-auto max-w-4xl">
+      <div className="m-auto max-w-3xl">
         <h1 className="text-4xl font-bold">Achievements</h1>
         <div className="text-2xl text-gray-600">Things I Have Achieved</div>
         <div className="my-4">
@@ -69,7 +66,7 @@ export const Achievements: React.FC<{ achievements: Achievement[] }> = ({
         </div>
         <div className="flex justify-center">
           <button
-            className="px-2 py-1 bg-blue-100 text-blue-700 rounded"
+            className="px-2 py-1 bg-blue-100 text-blue-700 border border-blue-200 rounded shadow-xs"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "Show less ↑" : "Show more ↓"}

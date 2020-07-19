@@ -66,7 +66,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       </Head>
       <Nav />
 
-      <div className="mt-8 mb-12 md:mt-12 md:mb-18 container">
+      <div className="my-8 w-full max-w-3xl mx-auto px-4">
         <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
           {post.title}
         </h1>
@@ -82,7 +82,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           </Link>
         </div>
       </div>
-      <article className="flex-1 container max-w-4xl">
+      <article className="my-8 w-full max-w-3xl px-4 mx-auto">
         <NotionRenderer blockMap={blocks} />
       </article>
       <Footer />

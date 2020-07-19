@@ -9,7 +9,7 @@ const RepoList: React.FC<{
   repos: Repo[];
 }> = ({ repos, title, url }) => (
   <div>
-    <h2 className="text-lg text-gray-600 font-semibold">{title}</h2>
+    <h2 className="text-2xl text-gray-600">{title}</h2>
     <ul>
       {repos.map(({ id, name, url, description, owner }) => (
         <li

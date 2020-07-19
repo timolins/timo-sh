@@ -4,7 +4,10 @@ import Head from "next/head";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../../config";
 
+import TwitterIcon from "../../assets/svgs/twitter.svg";
+
 import { getBlogTable, getPageBlocks, getPageViews } from "../../core/blog";
+import { dateFormatter } from "../../core/utils";
 import { Post } from "../../types/blog";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Nav } from "../../components/sections/nav";
@@ -66,15 +69,13 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       </Head>
       <Nav />
 
-      {/* <Navigation />
-      <CookieBanner /> */}
-      <div className="mt-8 mb-12 md:mt-12 md:mb-18 container">
+      <div className="mt-8 mb-12 md:mt-12 md:mb-18 px-4">
         <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
           {post.title}
         </h1>
         <div className="sm:text-center text-gray-600">
           <time dateTime={new Date(post.date).toISOString()}>
-            {/* {dateFormatter.format(new Date(post.date))} */}
+            {dateFormatter.format(new Date(post.date))}
           </time>
           {" / "}
           <span>{postViewCount || "..."} Views</span>
@@ -84,31 +85,20 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           </Link>
         </div>
       </div>
-      <article className="flex-1 container max-w-4xl">
+      <article className="flex-1 w-full max-w-3xl mx-auto px-4">
         <NotionRenderer blockMap={blocks} />
       </article>
-      <div className="container my-8 max-w-4xl">
-        <div className="py-6 my-2 border-t flex items-center">
+      <div className="my-8 w-full max-w-3xl mx-auto px-4">
+        <div className="py-6 my-2 border-t flex items-end">
           <div>
             <div className="font-semibold">Timo Lins</div>
-            <div className="text-blue-700">Twitter</div>
             <div>
               <a className="inline-block" href="https://twitter.com/timolins">
-                {/* <TwitterIcon className="w-6 -ml-1 text-gray-500 hover:text-gray-600 transition-colors duration-200" /> */}
+                <TwitterIcon className="w-6 -ml-1 text-gray-500 hover:text-gray-600 transition-colors duration-200" />
               </a>
             </div>
           </div>
         </div>
-
-        {/* <div className="text-right">
-          {prevPost && (
-            <div>
-              <Link href={prevPost.path}>
-                <a>{prevPost.title + " →"}</a>
-              </Link>
-            </div>
-          )}
-        </div> */}
       </div>
       <Footer />
     </>

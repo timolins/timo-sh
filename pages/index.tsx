@@ -63,11 +63,10 @@ export const getStaticProps = async (): Promise<{
   };
 };
 
-export default ({ posts, achievements, repos, projects }: AppProps) => (
+export default ({ achievements, repos, projects }: AppProps) => (
   <>
     <Hero />
     <Work projects={projects} preview />
-    <Blog posts={posts} />
     <Achievements achievements={achievements} />
     <GitHubActivity {...repos} />
     <Footer />

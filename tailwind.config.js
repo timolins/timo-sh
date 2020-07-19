@@ -14,7 +14,7 @@ module.exports = {
       },
     },
     container: {
-      padding: "2rem",
+      padding: "1rem",
       center: true,
     },
     boxShadow: {
@@ -27,5 +27,6 @@ module.exports = {
     textColor: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
     translate: ["hover", "group-hover"],
+    scale: ["hover", "group-hover"],
   },
 };
