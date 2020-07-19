@@ -21,6 +21,6 @@ button:focus {
   box-shadow: 0 0 0 3px rgba(16, 141, 255, 0.5);
 }
 
-.achievement {
-  padding-left: 0 !important;
+.achievement .notion-text {
+  @apply text-gray-600 pl-0;
 }

@@ -33,17 +33,21 @@ const Project: React.FC<
   >
     {featured && (
       <div className="pb-2/3 bg-gray-100 relative border-b">
-        {images && images[0] && (
-          <img
-            className="absolute w-full h-full object-cover"
-            src={toNotionImageUrl(images[0].url)}
-            alt={title}
-          />
-        )}
+        <Link href={`/work/${slug}`}>
+          <a>
+            {images && images[0] && (
+              <img
+                className="absolute w-full h-full object-cover"
+                src={toNotionImageUrl(images[0].url)}
+                alt={title}
+              />
+            )}
+          </a>
+        </Link>
       </div>
     )}
     <div className="flex flex-1 flex-col justify-between">
-      <div className="p-4">
+      <div className="p-4 pb-0">
         <div className="text-xl font-semibold text-gray-800">{title}</div>
         <div className="text-gray-600">{preview}</div>
       </div>
@@ -73,7 +77,7 @@ export const Work: React.FC<{
   <div className="container my-8">
     <h1 className="text-4xl font-bold">Work</h1>
     <div className="text-2xl text-gray-600">Things I Have Made in the Past</div>
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-4 my-4">
       {projects.slice(0, 3).map(p => (
         <Project featured {...p} />
       ))}

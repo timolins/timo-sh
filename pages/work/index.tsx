@@ -1,6 +1,6 @@
-import { Hero } from "../../components/sections/hero";
 import { Work } from "../../components/sections/work";
 import { Footer } from "../../components/sections/footer";
+import { Nav } from "../../components/sections/nav";
 import { Project } from "../../types/project";
 import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
@@ -25,7 +25,7 @@ export const getStaticProps = async (): Promise<{
 
 export default ({ projects }: AppProps) => (
   <>
-    <Hero />
+    <Nav />
     <Work projects={projects} />
     <Footer />
   </>

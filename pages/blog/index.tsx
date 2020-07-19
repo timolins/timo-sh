@@ -1,9 +1,9 @@
-import { Hero } from "../../components/sections/hero";
 import { Blog } from "../../components/sections/blog";
 import { Footer } from "../../components/sections/footer";
 import { Post } from "../../types/blog";
 import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
+import { Nav } from "../../components/sections/nav";
 
 interface AppProps {
   posts: Post[];
@@ -27,8 +27,10 @@ export const getStaticProps = async (): Promise<{
 
 export default ({ posts }: AppProps) => (
   <>
-    <Hero />
-    <Blog posts={posts} />
+    <Nav />
+    <div className="flex-1">
+      <Blog posts={posts} />
+    </div>
     <Footer />
   </>
 );

@@ -20,6 +20,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
     "dayjs": "^1.8.29",
     "next": "^9.4.4",
     "next-seo": "^4.7.3",

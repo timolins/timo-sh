@@ -7,11 +7,11 @@ export const Blog: React.FC<{ posts: Post[] }> = ({ posts = [] }) => {
       <h2 className="text-4xl font-bold">Blog</h2>
 
       {posts.map(post => (
-        <div key={post.id}>
+        <div key={post.id} className="my-4">
           <Link href={`/blog/${post.slug}`}>
-            <a>{post.title} →</a>
+            <a className="text-blue-600 text-lg">{post.title} →</a>
           </Link>
-          <div className="text-gray-600">{post.preview}</div>
+          <div className="text-gray-700">{post.preview}</div>
         </div>
       ))}
       {/* <CustomHead title="Blog" />

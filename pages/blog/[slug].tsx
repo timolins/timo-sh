@@ -7,6 +7,8 @@ import { config } from "../../config";
 import { getBlogTable, getPageBlocks, getPageViews } from "../../core/blog";
 import { Post } from "../../types/blog";
 import { GetStaticProps, GetStaticPaths } from "next";
+import { Nav } from "../../components/sections/nav";
+import { Footer } from "../../components/sections/footer";
 
 interface PostProps {
   blocks: BlockMapType;
@@ -62,6 +64,8 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       <Head>
         <meta name="date" content={new Date(post.date).toDateString()} />
       </Head>
+      <Nav />
+
       {/* <Navigation />
       <CookieBanner /> */}
       <div className="mt-8 mb-12 md:mt-12 md:mb-18 container">
@@ -87,7 +91,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
         <div className="py-6 my-2 border-t flex items-center">
           <div>
             <div className="font-semibold">Timo Lins</div>
-            <div className="text-gray-700">CEO & Founder</div>
+            <div className="text-blue-700">Twitter</div>
             <div>
               <a className="inline-block" href="https://twitter.com/timolins">
                 {/* <TwitterIcon className="w-6 -ml-1 text-gray-500 hover:text-gray-600 transition-colors duration-200" /> */}
@@ -106,7 +110,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           )}
         </div> */}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
