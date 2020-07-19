@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Briefcase from "../../assets/svgs/briefcase.svg";
 import Lock from "../../assets/svgs/lock.svg";
@@ -9,6 +9,7 @@ import { Timestamp } from "../base/timestamp";
 import {
   Achievement as AchievementProps,
   AchievementType,
+  Achievement,
 } from "../../types/achievement";
 import { NotionRenderer } from "react-notion";
 
@@ -31,40 +32,13 @@ const AchievementIcon: React.FC<{
   }
 };
 
-// const achievements: AchievementProps[] = [
-//   {
-//     type: "award",
-//     title: "Test",
-//     date: new Date(),
-//     Content: () => <div>123213</div>,
-//   },
-//   {
-//     type: "security",
-//     title: "Test",
-//     date: new Date(),
-//     Content: () => <div>test</div>,
-//   },
-//   {
-//     type: "work",
-//     title: "Test",
-//     date: new Date(),
-//     Content: () => <div>test</div>,
-//   },
-//   {
-//     type: "education",
-//     title: "Test",
-//     date: new Date(),
-//     Content: () => <div>test</div>,
-//   },
-// ];
-
-const Achievement: React.FC<AchievementProps> = ({
+const AchievementRow: React.FC<AchievementProps> = ({
   title,
   date,
   type,
   blockMap,
 }) => (
-  <div className="flex items-center my-8">
+  <div className="flex items-center my-8 achievement">
     <AchievementIcon type={type} />
     <h4 className="flex-1 mx-4">
       <div className="font-semibold">{title}</div>
@@ -78,16 +52,30 @@ const Achievement: React.FC<AchievementProps> = ({
 
 export const Achievements: React.FC<{ achievements: Achievement[] }> = ({
   achievements,
-}) => (
-  <div className="container">
-    <div className="mx-32">
-      <h1 className="text-4xl font-bold">Achievements</h1>
-      <div className="text-2xl text-gray-600">Things I Have Achieved</div>
-      <div className="my-4">
-        {achievements.map((p, i) => (
-          <Achievement key={i} {...p} />
-        ))}
+}) => {
+  const [showMore, setShowMore] = useState(false);
+
+  return (
+    <div className="container my-16">
+      <div className="m-auto max-w-4xl">
+        <h1 className="text-4xl font-bold">Achievements</h1>
+        <div className="text-2xl text-gray-600">Things I Have Achieved</div>
+        <div className="my-4">
+          {achievements
+            .filter(a => showMore || a.highlight)
+            .map((a, i) => (
+              <AchievementRow key={i} {...a} />
+            ))}
+        </div>
+        <div className="flex justify-center">
+          <button
+            className="px-2 py-1 bg-blue-100 text-blue-700 rounded"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "Show less ↑" : "Show more ↓"}
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};

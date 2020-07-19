@@ -5,19 +5,19 @@ import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../../config";
 
 import { getBlogTable, getPageBlocks, getPageViews } from "../../core/blog";
-import { Post } from "../../types/blog";
+import { Project } from "../../types/project";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 interface PostProps {
   blocks: BlockMapType;
-  post: Post;
+  post: Project;
   postViewCount: number;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const table = await getBlogTable<Post>(config.notionBlogTableId);
+  const table = await getBlogTable<Project>(config.notionProjectTableId);
   return {
-    paths: table.filter(row => row.published).map(row => `/blog/${row.slug}`),
+    paths: table.filter(row => row.published).map(row => `/work/${row.slug}`),
     fallback: false,
   };
 };
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<
     throw Error("No slug given");
   }
 
-  const table = await getBlogTable<Post>(config.notionBlogTableId);
+  const table = await getBlogTable<Project>(config.notionProjectTableId);
 
   const post = table.find(t => t.slug === slug);
 

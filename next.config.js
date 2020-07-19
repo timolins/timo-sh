@@ -1,5 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const optimizedImages = require("next-optimized-images");
 
 const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
   return Object.assign({}, nextConfig, {
@@ -18,12 +17,8 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
   });
 };
 
-module.exports = withPlugins([
-  withSvgr,
-  [
-    optimizedImages,
-    {
-      handleImages: ["jpeg", "png", "webp", "gif"],
-    },
-  ],
-]);
+module.exports = withPlugins([withSvgr], {
+  env: {
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+  },
+});
