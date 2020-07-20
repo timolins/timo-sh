@@ -38,7 +38,7 @@ export const GitHubActivity: React.FC<{
 }> = ({ starredRepos, contributedRepos }) => (
   <div className="container">
     <h1 className="text-4xl font-bold">GitHub Activity</h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-32">
       <RepoList
         title="Repos I Contributed to"
         url={`https://github.com/${config.githubUsername}`}
