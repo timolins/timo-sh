@@ -5,9 +5,14 @@ import clsx from "clsx";
 interface TimestampProps {
   date: Date;
   endDate?: Date;
+  className?: string;
 }
 
-export const Timestamp: React.FC<TimestampProps> = ({ date, endDate }) => {
+export const Timestamp: React.FC<TimestampProps> = ({
+  date,
+  endDate,
+  className,
+}) => {
   const day = dayjs(date);
   const current = endDate && dayjs().isBefore(endDate);
   const endDay = dayjs(current ? new Date() : endDate);
@@ -21,7 +26,12 @@ export const Timestamp: React.FC<TimestampProps> = ({ date, endDate }) => {
   const suffix = hasEndDate ? "months" : "y/o";
 
   return (
-    <div className="py-8 flex items-center group relative h-6 w-24 cursor-default">
+    <div
+      className={clsx(
+        "py-6 flex items-center group relative h-6 w-24 cursor-default",
+        className
+      )}
+    >
       <div
         className={clsx(
           "absolute transform -translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0",

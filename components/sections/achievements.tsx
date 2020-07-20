@@ -48,7 +48,11 @@ const AchievementRow: React.FC<AchievementProps> = ({
       <NotionRenderer blockMap={blockMap} />
     </h4>
     <div>
-      <Timestamp date={new Date(date)} endDate={new Date(endDate)} />
+      <Timestamp
+        className="border-l pl-2 ml-2"
+        date={new Date(date)}
+        endDate={new Date(endDate)}
+      />
     </div>
   </div>
 );
