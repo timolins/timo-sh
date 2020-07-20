@@ -7,6 +7,7 @@ export interface Achievement {
   highlight: boolean;
   type: AchievementType;
   date: number;
+  endDate: number;
   title: string;
   blockMap: BlockMapType;
 }
