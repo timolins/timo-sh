@@ -27,6 +27,7 @@ module.exports = {
     textColor: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
     translate: ["hover", "group-hover"],
+    opacity: ["hover", "group-hover"],
     scale: ["hover", "group-hover"],
   },
 };

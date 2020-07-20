@@ -32,6 +32,7 @@ const AchievementIcon: React.FC<{
 const AchievementRow: React.FC<AchievementProps> = ({
   title,
   date,
+  endDate,
   type,
   blockMap,
 }) => (
@@ -47,7 +48,7 @@ const AchievementRow: React.FC<AchievementProps> = ({
       <NotionRenderer blockMap={blockMap} />
     </h4>
     <div>
-      <Timestamp date={new Date("2020-03-1")} endDate={new Date("2020-05-1")} />
+      <Timestamp date={new Date(date)} endDate={new Date(endDate)} />
     </div>
   </div>
 );
