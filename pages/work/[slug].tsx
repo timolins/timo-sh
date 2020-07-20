@@ -1,10 +1,12 @@
 import * as React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../../config";
 
 import { getBlogTable, getPageBlocks, getPageViews } from "../../core/blog";
+import { dateFormatter } from "../../core/utils";
 import { Project } from "../../types/project";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Nav } from "../../components/sections/nav";
@@ -60,19 +62,22 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
 
   return (
     <>
-      {/* <CustomHead title={post.page} description={post.preview} /> */}
+      <NextSeo
+        title={post.title}
+        description={post.preview}
+        titleTemplate="%s – Timo Lins / Work"
+      />
       <Head>
         <meta name="date" content={new Date(post.date).toDateString()} />
       </Head>
       <Nav />
-
       <div className="my-8 w-full max-w-3xl mx-auto px-4">
         <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
           {post.title}
         </h1>
         <div className="sm:text-center text-gray-600">
           <time dateTime={new Date(post.date).toISOString()}>
-            {/* {dateFormatter.format(new Date(post.date))} */}
+            {dateFormatter.format(new Date(post.date))}
           </time>
           {" / "}
           <span>{postViewCount || "..."} Views</span>

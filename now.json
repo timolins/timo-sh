@@ -5,6 +5,5 @@
     "env": {
       "GITHUB_TOKEN": "@timo-sh-github"
     }
-  },
-  "version": 1
+  }
 }

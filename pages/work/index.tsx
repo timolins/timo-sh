@@ -4,6 +4,7 @@ import { Nav } from "../../components/sections/nav";
 import { Project } from "../../types/project";
 import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
+import { NextSeo } from "next-seo";
 
 interface AppProps {
   projects: Project[];
@@ -26,6 +27,10 @@ export const getStaticProps = async (): Promise<{
 export default ({ projects }: AppProps) => (
   <>
     <Nav />
+    <NextSeo
+      title={"Work ~ Timo Lins"}
+      description="A collection of some of my work I've made in the past. Including web apps, landing page designs and videos."
+    />
     <Work projects={projects} />
     <Footer />
   </>

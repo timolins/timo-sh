@@ -1,6 +1,6 @@
 import { Hero } from "../components/sections/hero";
 import { Work } from "../components/sections/work";
-import { Blog } from "../components/sections/blog";
+import { NextSeo } from "next-seo";
 import { Footer } from "../components/sections/footer";
 import { Achievements } from "../components/sections/achievements";
 import { GitHubActivity } from "../components/sections/github-activity";
@@ -65,6 +65,10 @@ export const getStaticProps = async (): Promise<{
 
 export default ({ achievements, repos, projects }: AppProps) => (
   <>
+    <NextSeo
+      title={"Timo Lins – Code · Design · Film"}
+      description="Hey I'm Timo! I design and build digital products. Illustrating and film making are also my passion."
+    />
     <Hero />
     <Work projects={projects} preview />
     <Achievements achievements={achievements} />

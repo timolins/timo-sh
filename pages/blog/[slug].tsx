@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../../config";
 
@@ -63,7 +64,11 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
 
   return (
     <>
-      {/* <CustomHead title={post.page} description={post.preview} /> */}
+      <NextSeo
+        title={post.title}
+        description={post.preview}
+        titleTemplate="%s – Timo Lins / Blog"
+      />
       <Head>
         <meta name="date" content={new Date(post.date).toDateString()} />
       </Head>
