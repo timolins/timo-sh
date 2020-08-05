@@ -76,7 +76,7 @@ export const Achievements: React.FC<{ achievements: Achievement[] }> = ({
         </div>
         <div className="flex justify-center">
           <button
-            className="px-2 py-1 bg-blue-100 text-blue-700 border border-blue-200 rounded shadow-xs"
+            className="px-2 py-1 text-gray-800 border border-gray-300 rounded shadow-xs"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "Show less ↑" : "Show more ↓"}

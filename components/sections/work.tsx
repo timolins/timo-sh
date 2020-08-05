@@ -132,11 +132,11 @@ export const Work: React.FC<{
             Want to see more?
           </div>
           <div className="text-gray-600">
-            Visit the project page to see all my work.
+            Visit the project page to explore more of my work.
           </div>
           <Link href="/work">
             <a className="mt-3 bg-gray-800 hover:bg-gray-700 text-gray-100 py-1 px-6 rounded-md">
-              Explore all
+              View more
             </a>
           </Link>
         </div>

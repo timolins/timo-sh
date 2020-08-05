@@ -98,8 +98,12 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           <div>
             <div className="font-semibold">Timo Lins</div>
             <div>
-              <a className="inline-block" href="https://twitter.com/timolins">
-                <TwitterIcon className="w-6 -ml-1 text-gray-500 hover:text-gray-600 transition-colors duration-200" />
+              <a
+                className="inline-flex text-gray-500 hover:text-gray-600 transition-colors duration-200"
+                href="https://twitter.com/timolins"
+              >
+                <span>@timolins</span>
+                <TwitterIcon className="w-6" />
               </a>
             </div>
           </div>

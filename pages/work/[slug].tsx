@@ -65,11 +65,15 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       <NextSeo
         title={post.title}
         description={post.preview}
+        openGraph={{
+          type: "article",
+          article: {
+            publishedTime: new Date(post.date).toISOString(),
+            tags: post.tags,
+          },
+        }}
         titleTemplate="%s – Timo Lins / Work"
       />
-      <Head>
-        <meta name="date" content={new Date(post.date).toDateString()} />
-      </Head>
       <Nav />
       <div className="my-8 w-full max-w-3xl mx-auto px-4">
         <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
@@ -87,7 +91,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           </Link>
         </div>
       </div>
-      <article className="my-8 w-full max-w-3xl px-4 mx-auto">
+      <article className="flex-1 my-8 w-full max-w-3xl px-4 mx-auto">
         <NotionRenderer blockMap={blocks} />
       </article>
       <Footer />

@@ -2,7 +2,11 @@ import { Post } from "../../types/blog";
 import Link from "next/link";
 import { dateFormatter } from "../../core/utils";
 
-export const Blog: React.FC<{ posts: Post[] }> = ({ posts = [] }) => {
+interface BlogProps {
+  posts: Post[];
+}
+
+export const Blog: React.FC<BlogProps> = ({ posts }) => {
   return (
     <div className="my-8 mx-4 md:mx-auto max-w-2xl">
       <div className="my-8">
