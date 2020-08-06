@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps<
   }
 
   const blocks = await getPageBlocks(post.id);
-  const postViewCount = await getPageViews(slug);
+  const postViewCount = await getPageViews(`/work/${slug}`);
 
   return {
     props: {
@@ -87,7 +87,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           <span>{postViewCount || "..."} Views</span>
           {" / "}
           <Link href="/blog">
-            <a className="text-blue-500">Blog</a>
+            <a className="text-blue-500">Work</a>
           </Link>
         </div>
       </div>

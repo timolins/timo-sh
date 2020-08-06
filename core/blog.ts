@@ -12,9 +12,9 @@ export const getPageBlocks = async (pageId: string): Promise<BlockMapType> => {
   ).then(res => res.json());
 };
 
-export const getPageViews = async (slug: string): Promise<number> => {
+export const getPageViews = async (path: string): Promise<number> => {
   const res = await fetch(
-    `https://api.splitbee.io/public/timo.sh?path=/blog/${slug}`
+    `https://api.splitbee.io/public/timo.sh?path=${path}`
   ).then(res => res.json());
   return res.count || 0;
 };
