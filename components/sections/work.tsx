@@ -49,7 +49,7 @@ const Project: React.FC<
 > = ({ title, preview, images, featured, slug, types, className }) => (
   <div
     className={clsx(
-      "border rounded-md overflow-hidden flex flex-col",
+      "border bg-white rounded-md overflow-hidden flex flex-col",
       "hover:-translate-y-1 transform transition-transform ease-in-out duration-100",
       featured && "shadow-sm",
       className
@@ -76,14 +76,14 @@ const Project: React.FC<
           <a
             className={clsx(
               featured ? "text-xl" : "text-lg",
-              "font-semibold text-gray-800 block"
+              "font-semibold text-gray-800 hover:text-gray-600"
             )}
             tabIndex={-1}
           >
             {title}
           </a>
         </Link>
-        <div className={clsx(!featured && "text-sm", "text-gray-600")}>
+        <div className={clsx(!featured && "text-sm", "text-gray-700")}>
           {preview}
         </div>
       </div>
@@ -120,7 +120,7 @@ export const Work: React.FC<{
   <div className="container my-8">
     <h1 className="text-4xl font-bold">Work</h1>
     <div className="text-2xl text-gray-600">Things I Have Made in the Past</div>
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
       {projects.slice(0, preview ? 3 : undefined).map(p => (
         <Project key={p.id} featured {...p} />
       ))}
@@ -131,7 +131,7 @@ export const Work: React.FC<{
           <Project key={p.id} className="hidden md:flex" {...p} />
         ))}
         <div className="flex flex-col items-center justify-center text-center py-4">
-          <div className="text-lg font-bold text-gray-700">
+          <div className="text-lg font-bold text-gray-800">
             Want to see more?
           </div>
           <div className="text-gray-600">
