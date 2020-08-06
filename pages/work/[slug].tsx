@@ -9,6 +9,7 @@ import { Project } from "../../types/project";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Nav } from "../../components/sections/nav";
 import { Footer } from "../../components/sections/footer";
+import { toNotionImageUrl } from "../../core/notion";
 
 interface PostProps {
   blocks: BlockMapType;
@@ -86,7 +87,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
         </div>
       </div>
       <article className="flex-1 my-8 w-full max-w-3xl px-4 mx-auto">
-        <NotionRenderer blockMap={blocks} />
+        <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
       </article>
       <Footer />
     </>

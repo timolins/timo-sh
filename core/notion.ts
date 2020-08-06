@@ -1,5 +1,7 @@
 export const toNotionImageUrl = (url: string) => {
-  return `https://notion.so${
+  const imageUrl = `https://www.notion.so${
     url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
   }`;
+
+  return `https://img.timo.sh/${encodeURIComponent(imageUrl)}`;
 };

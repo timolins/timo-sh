@@ -72,14 +72,17 @@ const Project: React.FC<
     )}
     <div className="flex flex-1 flex-col justify-between">
       <div className="p-4 pb-0">
-        <div
-          className={clsx(
-            featured ? "text-xl" : "text-lg",
-            "font-semibold text-gray-800"
-          )}
-        >
-          {title}
-        </div>
+        <Link href={`/work/${slug}`}>
+          <a
+            className={clsx(
+              featured ? "text-xl" : "text-lg",
+              "font-semibold text-gray-800 block"
+            )}
+            tabIndex={-1}
+          >
+            {title}
+          </a>
+        </Link>
         <div className={clsx(!featured && "text-sm", "text-gray-600")}>
           {preview}
         </div>
@@ -117,7 +120,7 @@ export const Work: React.FC<{
   <div className="container my-8">
     <h1 className="text-4xl font-bold">Work</h1>
     <div className="text-2xl text-gray-600">Things I Have Made in the Past</div>
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-4">
       {projects.slice(0, preview ? 3 : undefined).map(p => (
         <Project key={p.id} featured {...p} />
       ))}
