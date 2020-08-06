@@ -1,6 +1,4 @@
 import * as React from "react";
-import Link from "next/link";
-import Head from "next/head";
 import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../../config";
@@ -53,7 +51,7 @@ export const getStaticProps: GetStaticProps<
       postViewCount,
       blocks,
     },
-    unstable_revalidate: 10,
+    revalidate: 10,
   };
 };
 
@@ -83,12 +81,8 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           <time dateTime={new Date(post.date).toISOString()}>
             {dateFormatter.format(new Date(post.date))}
           </time>
-          {" / "}
+          <span className="text-gray-400"> / </span>
           <span>{postViewCount || "..."} Views</span>
-          {" / "}
-          <Link href="/blog">
-            <a className="text-blue-500">Work</a>
-          </Link>
         </div>
       </div>
       <article className="flex-1 my-8 w-full max-w-3xl px-4 mx-auto">

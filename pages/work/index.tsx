@@ -1,26 +1,24 @@
+import { NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
 import { Work } from "../../components/sections/work";
 import { Footer } from "../../components/sections/footer";
 import { Nav } from "../../components/sections/nav";
 import { Project } from "../../types/project";
 import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
-import { NextSeo } from "next-seo";
 
 interface AppProps {
   projects: Project[];
 }
 
-export const getStaticProps = async (): Promise<{
-  props: AppProps;
-  unstable_revalidate: number;
-}> => {
+export const getStaticProps: GetStaticProps<AppProps> = async () => {
   const projects = await getBlogTable<Project>(config.notionProjectTableId);
 
   return {
     props: {
       projects: projects.filter(post => post.published),
     },
-    unstable_revalidate: 10,
+    revalidate: 10,
   };
 };
 

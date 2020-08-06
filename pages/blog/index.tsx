@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
 import { Blog } from "../../components/sections/blog";
 import { Footer } from "../../components/sections/footer";
 import { Post } from "../../types/blog";
@@ -6,14 +7,11 @@ import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
 import { Nav } from "../../components/sections/nav";
 
-interface AppProps {
+interface BlogProps {
   posts: Post[];
 }
 
-export const getStaticProps = async (): Promise<{
-  props: AppProps;
-  unstable_revalidate: number;
-}> => {
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
   const posts = await getBlogTable<Post>(config.notionBlogTableId);
 
   return {
@@ -22,11 +20,11 @@ export const getStaticProps = async (): Promise<{
         .filter(post => post.published)
         .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))),
     },
-    unstable_revalidate: 10,
+    revalidate: 10,
   };
 };
 
-export default ({ posts }: AppProps) => (
+export default ({ posts }: BlogProps) => (
   <>
     <Nav />
     <NextSeo

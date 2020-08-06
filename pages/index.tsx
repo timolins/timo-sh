@@ -1,6 +1,7 @@
+import { NextSeo } from "next-seo";
+import { GetStaticProps } from "next";
 import { Hero } from "../components/sections/hero";
 import { Work } from "../components/sections/work";
-import { NextSeo } from "next-seo";
 import { Footer } from "../components/sections/footer";
 import { Achievements } from "../components/sections/achievements";
 import { GitHubActivity } from "../components/sections/github-activity";
@@ -21,10 +22,7 @@ interface AppProps {
   };
 }
 
-export const getStaticProps = async (): Promise<{
-  props: AppProps;
-  unstable_revalidate: number;
-}> => {
+export const getStaticProps: GetStaticProps<AppProps> = async () => {
   const [
     posts,
     projects,
@@ -59,7 +57,7 @@ export const getStaticProps = async (): Promise<{
         contributedRepos,
       },
     },
-    unstable_revalidate: 10,
+    revalidate: 10,
   };
 };
 
