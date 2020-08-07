@@ -83,7 +83,11 @@ const BlogPost: React.FC<PostProps> = ({
         openGraph={{
           type: "article",
           images: post.images?.[0] && [
-            { url: toNotionImageUrl(post.images[0].url) },
+            {
+              url: toNotionImageUrl(post.images[0].url),
+              width: 320,
+              height: 210,
+            },
           ],
           article: {
             publishedTime: new Date(post.date).toISOString(),
