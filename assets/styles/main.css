@@ -35,6 +35,10 @@ a:focus {
   @apply max-w-screen-lg;
 }
 
+.post-container {
+  @apply max-w-3xl mx-auto w-full px-4;
+}
+
 @keyframes enter {
   0% {
     opacity: 0;

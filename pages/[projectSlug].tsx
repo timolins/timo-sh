@@ -9,11 +9,14 @@ import { Project } from "../types/project";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Nav } from "../components/sections/nav";
 import { Footer } from "../components/sections/footer";
+import { Project as ProjectCard } from "../components/sections/work";
 import { toNotionImageUrl } from "../core/notion";
+import Link from "next/link";
 
 interface PostProps {
   blocks: BlockMapType;
   post: Project;
+  morePosts: Project[];
   postViewCount: number;
 }
 
@@ -36,8 +39,15 @@ export const getStaticProps: GetStaticProps<
   }
 
   const table = await getBlogTable<Project>(config.notionProjectTableId);
+  const publishedProjects = table.filter(p => p.published);
 
   const post = table.find(t => t.slug === slug);
+  const postIndex = publishedProjects.findIndex(t => t.slug === slug);
+
+  const morePosts = [...publishedProjects, ...publishedProjects].slice(
+    postIndex + 1,
+    postIndex + 3
+  );
 
   if (!post || (!post.published && process.env.NODE_ENV !== "development")) {
     throw Error(`Failed to find post for slug: ${slug}`);
@@ -51,12 +61,18 @@ export const getStaticProps: GetStaticProps<
       post,
       postViewCount,
       blocks,
+      morePosts,
     },
     revalidate: 10,
   };
 };
 
-const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
+const BlogPost: React.FC<PostProps> = ({
+  post,
+  morePosts,
+  postViewCount,
+  blocks,
+}) => {
   if (!post) return null;
 
   return (
@@ -86,9 +102,24 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           <span>{postViewCount || "..."} Views</span>
         </div>
       </div>
-      <article className="flex-1 my-8 w-full max-w-3xl px-4 mx-auto">
+      <article className="flex-1 my-6 post-container">
         <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
       </article>
+      <div className="post-container max-w-2xl my-20 text-sm">
+        <div className="flex justify-between items-center">
+          <h3 className="font-bold text-gray-600 my-4 uppercase tracking-wider">
+            Continue reading
+          </h3>
+          <Link href="/work">
+            <a className="font-bold text-blue-600 my-4 ">View all →</a>
+          </Link>
+        </div>
+        <ul className="grid grid-cols-2 gap-4">
+          {morePosts.map(p => (
+            <ProjectCard {...p} />
+          ))}
+        </ul>
+      </div>
       <Footer />
     </>
   );

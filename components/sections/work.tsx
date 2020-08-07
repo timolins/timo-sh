@@ -41,7 +41,7 @@ const TypeBadge: React.FC<{ type: ProjectType; compact?: boolean }> = ({
   }
 };
 
-const Project: React.FC<
+export const Project: React.FC<
   ProjectData & {
     featured?: boolean;
     className?: string;
