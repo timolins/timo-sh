@@ -28,7 +28,7 @@ export const Timestamp: React.FC<TimestampProps> = ({
   return (
     <div
       className={clsx(
-        "py-6 flex items-center group relative h-6 w-24 cursor-default",
+        "py-6 flex items-center group relative h-6 w-20 md:w-24 cursor-default",
         className
       )}
     >
