@@ -18,7 +18,8 @@ a {
 
 input:focus,
 button:focus,
-a:focus {
+a:focus,
+.focus:focus {
   @apply border-blue-500 outline-none;
   box-shadow: 0 0 0 3px rgba(16, 141, 255, 0.5);
 }
