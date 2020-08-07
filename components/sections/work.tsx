@@ -53,7 +53,7 @@ export const Project: React.FC<
       className={clsx(
         "focus group border bg-white rounded-md overflow-hidden flex flex-col",
         "transform transition-transform ease-in-out duration-100 hover:border-gray-400",
-        featured ? "shadow-sm hover:-translate-y-1" : "",
+        featured && "shadow-sm hover:-translate-y-1 focus:-translate-y-1",
         className
       )}
     >
@@ -111,12 +111,10 @@ export const Work: React.FC<{
           <div className="text-lg font-bold text-gray-800">
             Want to see more?
           </div>
-          <div className="text-gray-600">
-            Visit the project page to explore more of my work.
-          </div>
+          <div className="text-gray-600">Explore more of my work</div>
           <Link href="/work">
             <a className="mt-3 bg-gray-800 hover:bg-gray-700 text-gray-100 py-1 px-6 rounded-md">
-              View more
+              View all
             </a>
           </Link>
         </div>

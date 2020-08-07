@@ -26,7 +26,7 @@ module.exports = {
   variants: {
     textColor: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
-    translate: ["hover", "group-hover"],
+    translate: ["hover", "focus", "group-hover"],
     opacity: ["hover", "group-hover"],
     scale: ["hover", "group-hover"],
   },
