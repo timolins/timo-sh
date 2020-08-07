@@ -1,15 +1,15 @@
 import * as React from "react";
 import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
-import { config } from "../../config";
+import { config } from "../config";
 
-import { getBlogTable, getPageBlocks, getPageViews } from "../../core/blog";
-import { dateFormatter } from "../../core/utils";
-import { Project } from "../../types/project";
+import { getBlogTable, getPageBlocks, getPageViews } from "../core/blog";
+import { dateFormatter } from "../core/utils";
+import { Project } from "../types/project";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { Nav } from "../../components/sections/nav";
-import { Footer } from "../../components/sections/footer";
-import { toNotionImageUrl } from "../../core/notion";
+import { Nav } from "../components/sections/nav";
+import { Footer } from "../components/sections/footer";
+import { toNotionImageUrl } from "../core/notion";
 
 interface PostProps {
   blocks: BlockMapType;
@@ -20,16 +20,16 @@ interface PostProps {
 export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<Project>(config.notionProjectTableId);
   return {
-    paths: table.filter(row => row.published).map(row => `/work/${row.slug}`),
+    paths: table.filter(row => row.published).map(row => `/${row.slug}`),
     fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { slug: string }
+  { projectSlug: string }
 > = async ({ params }) => {
-  const slug = params?.slug;
+  const slug = params?.projectSlug;
 
   if (!slug) {
     throw Error("No slug given");
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps<
   }
 
   const blocks = await getPageBlocks(post.id);
-  const postViewCount = await getPageViews(`/work/${slug}`);
+  const postViewCount = await getPageViews(`/${slug}`);
 
   return {
     props: {

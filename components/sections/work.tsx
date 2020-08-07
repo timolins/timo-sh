@@ -57,7 +57,7 @@ const Project: React.FC<
   >
     {featured && (
       <div className="pb-2/3 bg-gray-100 relative border-b overflow-hidden">
-        <Link href={`/work/${slug}`}>
+        <Link href={`/${slug}`}>
           <a tabIndex={-1}>
             {images && images[0] && (
               <img
@@ -72,7 +72,7 @@ const Project: React.FC<
     )}
     <div className="flex flex-1 flex-col justify-between">
       <div className="p-4 pb-0">
-        <Link href={`/work/${slug}`}>
+        <Link href={`/${slug}`}>
           <a
             className={clsx(
               featured ? "text-xl" : "text-lg",
@@ -93,7 +93,7 @@ const Project: React.FC<
             <TypeBadge key={type} compact type={type} />
           ))}
         </div>
-        <Link href={`/work/${slug}`}>
+        <Link href={`/${slug}`}>
           <a className="border group hover:bg-gray-100 text-blue-900 border-gray-300 py-1 px-3 rounded-md shadow-xs text">
             Read{" "}
             {featured && (
