@@ -82,6 +82,9 @@ const BlogPost: React.FC<PostProps> = ({
         description={post.preview}
         openGraph={{
           type: "article",
+          images: post.images?.[0] && [
+            { url: toNotionImageUrl(post.images[0].url) },
+          ],
           article: {
             publishedTime: new Date(post.date).toISOString(),
             tags: post.tags,
