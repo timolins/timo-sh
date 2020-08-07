@@ -42,7 +42,7 @@ const AchievementRow: React.FC<AchievementProps> = ({
       animation: "enter 200ms ease-out",
     }}
   >
-    <AchievementIcon className="w-16 md:w-24" type={type} />
+    <AchievementIcon className="w-10 md:w-24" type={type} />
     <h4 className="flex-1 mx-4">
       <div className="font-semibold">{title}</div>
       <NotionRenderer blockMap={blockMap} />

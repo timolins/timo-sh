@@ -117,7 +117,7 @@ const BlogPost: React.FC<PostProps> = ({
             <a className="font-bold text-blue-600 my-4 ">View all →</a>
           </Link>
         </div>
-        <ul className="grid grid-cols-2 gap-4">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {morePosts.map(p => (
             <ProjectCard {...p} />
           ))}
