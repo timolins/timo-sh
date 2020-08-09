@@ -37,9 +37,9 @@ const AchievementRow: React.FC<AchievementProps> = ({
   blockMap,
 }) => (
   <div
-    className="flex items-center my-8 achievement"
+    className="flex items-center my-8 animate-enter achievement-notion"
     style={{
-      animation: "enter 200ms ease-out",
+      animation: "enter 300ms ease-out",
     }}
   >
     <AchievementIcon className="w-10 md:w-24" type={type} />

@@ -24,14 +24,6 @@ a:focus,
   box-shadow: 0 0 0 3px rgba(16, 141, 255, 0.5);
 }
 
-.achievement .notion-text {
-  @apply text-gray-600 pl-0;
-}
-
-.achievement .notion-link,
-.achievement .notion-text {
-  @apply break-normal;
-}
 .container {
   @apply max-w-screen-lg;
 }
@@ -40,13 +32,16 @@ a:focus,
   @apply max-w-3xl mx-auto w-full px-4;
 }
 
-@keyframes enter {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.achievement-notion .notion-text {
+  @apply text-gray-600 pl-0;
+}
+
+.achievement-notion .notion-link,
+.achievement-notion .notion-text {
+  @apply break-normal;
+}
+
+.notion-asset-wrapper img,
+.notion-asset-wrapper iframe {
+  @apply overflow-hidden rounded;
 }
