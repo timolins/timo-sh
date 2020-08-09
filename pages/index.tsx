@@ -65,6 +65,7 @@ export default ({ achievements, repos, projects }: AppProps) => (
   <>
     <NextSeo
       title={"Timo Lins – Code · Design · Film"}
+      titleTemplate={"%s"}
       description="Hey I'm Timo! I design and build digital products. Illustrating and film making are also my passion."
     />
     <Hero />
