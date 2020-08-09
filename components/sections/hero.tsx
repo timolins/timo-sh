@@ -8,7 +8,7 @@ export const Hero: React.FC = () => (
       <div className="flex flex-col md:items-center my-16">
         <h1 className="text-4xl font-bold">Hey, I'm Timo!</h1>
         <p className="text-2xl text-gray-700">
-          I design and build apps, and everything that comes with that.
+          I design and build apps, and everything that comes with it.
         </p>
         <div className="max-w-sm md:mx-auto my-8 -ml-2">
           <a
