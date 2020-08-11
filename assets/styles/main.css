@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+body > div {
+  @apply text-gray-900 flex flex-col min-h-full flex-1 justify-between overflow-x-hidden;
+}
+
+input,
+button,
+a {
+  box-shadow: 0 0 0 0 rgba(16, 141, 255, 0.1);
+  transition: ease-in-out 80ms;
+  transition-property: box-shadow, background;
+}
+
+input:focus,
+button:focus,
+a:focus,
+.focus:focus {
+  @apply border-blue-500 outline-none;
+  box-shadow: 0 0 0 3px rgba(16, 141, 255, 0.5);
+}
+
+.container {
+  @apply max-w-screen-lg;
+}
+
+.post-container {
+  @apply max-w-3xl mx-auto w-full px-4;
+}
+
+.achievement-notion .notion-text {
+  @apply text-gray-600 pl-0;
+}
+
+.achievement-notion .notion-link,
+.achievement-notion .notion-text {
+  @apply break-normal;
+}
+
+.notion-asset-wrapper img,
+.notion-asset-wrapper iframe {
+  @apply overflow-hidden rounded;
+}

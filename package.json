@@ -1,31 +1,32 @@
 {
-  "name": "timo-sh",
-  "version": "1.0.0-beta",
-  "main": "src/index.js",
+  "name": "timo-sh-website",
+  "version": "1.0.0",
+  "description": "Personal page of Timo Lins",
+  "repository": "https://github.com/timolins/timo-sh",
+  "author": "Timo Lins <me@timo.sh>",
   "scripts": {
-    "start": "serve ./dist -p 5000",
-    "dev": "react-static start",
-    "build": "react-static build"
-  },
-  "dependencies": {
-    "chokidar": "2.0.3",
-    "dayjs": "^1.6.10",
-    "htmr": "^0.7.0",
-    "polished": "^1.9.2",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-hot-loader": "^4.0.0-beta.21",
-    "react-router": "^4.2.0",
-    "react-static": "^5.9.7",
-    "styled-components": "^4.3.2",
-    "whatwg-fetch": "^2.0.4"
+    "dev": "next -p 8000",
+    "build": "next build",
+    "start": "next start"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.5.1",
-    "dotenv": "^6.0.0",
-    "eslint-config-react-tools": "1.x.x",
-    "jdown": "^1.0.1",
-    "marked": "^0.7.0",
-    "serve": "^9.1.1"
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@svgr/webpack": "^5.4.0",
+    "@types/node": "^14.0.23",
+    "@types/node-fetch": "^2.5.7",
+    "@types/react": "^16.9.43",
+    "autoprefixer": "^9.8.5",
+    "next-compose-plugins": "^2.2.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "dayjs": "^1.8.29",
+    "next": "^9.4.4",
+    "next-seo": "^4.7.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-notion": "^0.8.0",
+    "tailwindcss": "^1.5.1"
   }
 }

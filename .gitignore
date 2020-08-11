@@ -1,18 +1,17 @@
 # dependencies
 /node_modules
 
-# testing
-/coverage
 
 # production
 /dist
 /tmp
 /public/content
+.next
 
 # misc
 .DS_Store
 .env*
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+*.log
+
+.vercel
