@@ -47,7 +47,7 @@ export const Project: React.FC<
     className?: string;
   }
 > = ({ title, preview, images, featured, slug, types, className }) => (
-  <Link href={`/${slug}`}>
+  <Link href={`/[projectSlug]`} as={`/${slug}`}>
     <a
       aria-label={`${title} - Project`}
       className={clsx(
@@ -73,7 +73,7 @@ export const Project: React.FC<
           <div className="font-semibold text-gray-800 group-hover:text-gray-700">
             {title}
           </div>
-
+          <div className="text-s"></div>
           <div className={clsx(!featured && "text-sm", "text-gray-700")}>
             {preview}
           </div>
