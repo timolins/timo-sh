@@ -13,18 +13,21 @@ export const Hero: React.FC = () => (
         <div className="max-w-sm md:mx-auto my-8 -ml-2">
           <a
             className="mx-1 md:mx-2 py-1 px-2 rounded bg-blue-200 hover:bg-blue-300 text-blue-800"
+            data-splitbee-event="Open Twitter"
             href="https://twitter.com/timolins"
           >
             Twitter
           </a>
           <a
             className="mx-1 md:mx-2 py-1 px-2 rounded bg-gray-300 hover:bg-gray-400 text-gray-800"
+            data-splitbee-event="Open GitHub"
             href="https://github.com/timolins"
           >
             GitHub
           </a>
           <a
             className="mx-1 md:mx-2 py-1 px-2 rounded bg-pink-200 hover:bg-pink-300 text-pink-800"
+            data-splitbee-event="Open Dribbble"
             href="https://dribbble.com/timolins"
           >
             Dribbble
