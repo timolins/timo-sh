@@ -2,9 +2,11 @@ import { MapImageUrl } from "react-notion";
 
 export const toNotionImageUrl: MapImageUrl = (url, block) => {
   const imageUrl = new URL(
-    `https://www.notion.so${
-      url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
-    }`
+    url.startsWith("https://www.notion.so")
+      ? url
+      : `https://www.notion.so${
+          url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
+        }`
   );
 
   if (block) {
