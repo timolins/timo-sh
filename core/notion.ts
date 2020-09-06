@@ -1,7 +1,19 @@
-export const toNotionImageUrl = (url: string) => {
-  const imageUrl = `https://www.notion.so${
-    url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
-  }`;
+import { MapImageUrl } from "react-notion";
 
-  return `https://img.timo.sh/${encodeURIComponent(imageUrl)}`;
+export const toNotionImageUrl: MapImageUrl = (url, block) => {
+  const imageUrl = new URL(
+    `https://www.notion.so${
+      url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
+    }`
+  );
+
+  if (block) {
+    const table =
+      block.value.parent_table === "space" ? "block" : block.value.parent_table;
+    imageUrl.searchParams.set("table", table);
+    imageUrl.searchParams.set("id", block.value.id);
+    imageUrl.searchParams.set("cache", "v2");
+  }
+
+  return `https://img.timo.sh/${encodeURIComponent(imageUrl.toString())}`;
 };
