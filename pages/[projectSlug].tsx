@@ -123,7 +123,7 @@ const BlogPost: React.FC<PostProps> = ({
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {morePosts.map(p => (
-            <ProjectCard {...p} />
+            <ProjectCard key={p.id} {...p} />
           ))}
         </ul>
       </div>
