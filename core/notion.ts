@@ -17,5 +17,5 @@ export const toNotionImageUrl: MapImageUrl = (url, block) => {
     imageUrl.searchParams.set("cache", "v2");
   }
 
-  return `https://img.timo.sh/${encodeURIComponent(imageUrl.toString())}`;
+  return `https://ssfy.io/${encodeURIComponent(imageUrl.toString())}`;
 };
