@@ -23,8 +23,11 @@ interface PostProps {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<Post>(config.notionBlogTableId);
+
   return {
-    paths: table.filter(row => row.published).map(row => `/blog/${row.slug}`),
+    paths: table
+      .filter((row) => process.env.NODE_ENV === "development" || row.published)
+      .map((row) => `/blog/${row.slug}`),
     fallback: false,
   };
 };
@@ -41,7 +44,7 @@ export const getStaticProps: GetStaticProps<
 
   const table = await getBlogTable<Post>(config.notionBlogTableId);
 
-  const post = table.find(t => t.slug === slug);
+  const post = table.find((t) => t.slug === slug);
 
   if (!post || (!post.published && process.env.NODE_ENV !== "development")) {
     throw Error(`Failed to find post for slug: ${slug}`);
@@ -75,11 +78,11 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       </Head>
       <Nav />
 
-      <div className="mt-8 mb-12 md:mt-12 md:mb-18 px-4">
-        <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
+      <div className="px-4 mt-8 mb-12 md:mt-12 md:mb-18">
+        <h1 className="mb-2 text-2xl font-bold md:text-3xl sm:text-center">
           {post.title}
         </h1>
-        <div className="sm:text-center text-gray-600">
+        <div className="text-gray-600 sm:text-center">
           <time dateTime={new Date(post.date).toISOString()}>
             {dateFormatter.format(new Date(post.date))}
           </time>
@@ -91,16 +94,16 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           </Link>
         </div>
       </div>
-      <article className="flex-1 w-full max-w-3xl mx-auto px-4">
+      <article className="flex-1 w-full max-w-3xl px-4 mx-auto">
         <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
       </article>
-      <div className="my-8 w-full max-w-3xl mx-auto px-4">
-        <div className="py-6 my-2 border-t flex items-end">
+      <div className="w-full max-w-3xl px-4 mx-auto my-8">
+        <div className="flex items-end py-6 my-2 border-t">
           <div>
             <div className="font-semibold">Timo Lins</div>
             <div>
               <a
-                className="inline-flex text-gray-500 hover:text-gray-600 transition-colors duration-200"
+                className="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-600"
                 href="https://twitter.com/timolins"
               >
                 <span>@timolins</span>

@@ -1,3 +1,4 @@
+import fs from "fs";
 import { NextSeo } from "next-seo";
 import { GetStaticProps } from "next";
 import { Blog } from "../../components/sections/blog";
@@ -5,6 +6,7 @@ import { Footer } from "../../components/sections/footer";
 import { Post } from "../../types/blog";
 import { getBlogTable } from "../../core/blog";
 import { config } from "../../config";
+import { generateRss } from "../../core/rss";
 import { Nav } from "../../components/sections/nav";
 
 interface BlogProps {
@@ -13,12 +15,15 @@ interface BlogProps {
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
   const posts = await getBlogTable<Post>(config.notionBlogTableId);
+  const filteredPosts = posts
+    .filter((post) => process.env.NODE_ENV === "development" || post.published)
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
+
+  fs.writeFileSync("./public/blog.xml", generateRss(filteredPosts));
 
   return {
     props: {
-      posts: posts
-        .filter(post => post.published)
-        .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))),
+      posts: filteredPosts,
     },
     revalidate: 10,
   };

@@ -6,6 +6,7 @@
 /dist
 /tmp
 /public/content
+/public/blog.xml
 .next
 
 # misc
