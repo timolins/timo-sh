@@ -14,7 +14,7 @@ function App({ Component, pageProps }: AppProps) {
           rel="alternate"
           type="application/rss+xml"
           title="Timo.sh blog – RSS Feed"
-          href="https://timo.sh/blog.xml"
+          href="https://timo.sh/api/blog.xml"
         />
       </Head>
       <Component {...pageProps} />

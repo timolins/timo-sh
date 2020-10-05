@@ -18,7 +18,7 @@ export const generateRss = (posts: Post[]): string => `
   <description>Writing about coding, design and things I like</description>
   <language>en</language>
   <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
-  <atom:link href="https://timo.sh/rss.xml" rel="self" type="application/rss+xml"/>
+  <atom:link href="https://timo.sh/api/blog.xml" rel="self" type="application/rss+xml"/>
   ${posts.map(generateRssItem).join("")}
 </channel>
 </rss>
