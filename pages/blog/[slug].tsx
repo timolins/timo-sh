@@ -71,6 +71,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       <NextSeo
         title={post.title}
         description={post.preview}
+        canonical={`https://timo.sh/blog/${post.slug}`}
         titleTemplate="%s – Timo Lins / Blog"
       />
       <Head>
