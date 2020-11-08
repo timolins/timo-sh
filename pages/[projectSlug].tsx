@@ -12,6 +12,7 @@ import { Nav } from "../components/sections/nav";
 import { Footer } from "../components/sections/footer";
 import { Project as ProjectCard } from "../components/sections/work";
 import { toNotionImageUrl } from "../core/notion";
+import { getOpenGraphImage } from "../core/og-image";
 import { AuthorFooter } from "../components/base/author-footer";
 
 interface PostProps {
@@ -84,17 +85,21 @@ const BlogPost: React.FC<PostProps> = ({
         canonical={`https://timo.sh/${post.slug}`}
         openGraph={{
           type: "article",
-          images: post.images?.[0] && [
+          images: [
             {
-              url: toNotionImageUrl(post.images[0].url),
-              width: 320,
-              height: 210,
+              url: getOpenGraphImage(post.title),
+              width: 1200,
+              height: 630,
             },
           ],
           article: {
             publishedTime: new Date(post.date).toISOString(),
             tags: post.tags,
           },
+        }}
+        twitter={{
+          handle: "@timolins",
+          cardType: "summary_large_image",
         }}
         titleTemplate="%s – Timo Lins / Work"
       />

@@ -13,6 +13,7 @@ import { Nav } from "../../components/sections/nav";
 import { AuthorFooter } from "../../components/base/author-footer";
 import { Footer } from "../../components/sections/footer";
 import { toNotionImageUrl } from "../../core/notion";
+import { getOpenGraphImage } from "../../core/og-image";
 
 interface PostProps {
   blocks: BlockMapType;
@@ -70,6 +71,23 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
       <NextSeo
         title={post.title}
         description={post.preview}
+        openGraph={{
+          type: "article",
+          images: [
+            {
+              url: getOpenGraphImage(post.title),
+              width: 1200,
+              height: 630,
+            },
+          ],
+          article: {
+            publishedTime: new Date(post.date).toISOString(),
+          },
+        }}
+        twitter={{
+          handle: "@timolins",
+          cardType: "summary_large_image",
+        }}
         canonical={`https://timo.sh/blog/${post.slug}`}
         titleTemplate="%s – Timo Lins / Blog"
       />
