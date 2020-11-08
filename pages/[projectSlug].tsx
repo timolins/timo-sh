@@ -2,6 +2,7 @@ import * as React from "react";
 import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../config";
+import Link from "next/link";
 
 import { getBlogTable, getPageBlocks, getPageViews } from "../core/blog";
 import { dateFormatter } from "../core/utils";
@@ -11,7 +12,7 @@ import { Nav } from "../components/sections/nav";
 import { Footer } from "../components/sections/footer";
 import { Project as ProjectCard } from "../components/sections/work";
 import { toNotionImageUrl } from "../core/notion";
-import Link from "next/link";
+import { AuthorFooter } from "../components/base/author-footer";
 
 interface PostProps {
   blocks: BlockMapType;
@@ -23,7 +24,7 @@ interface PostProps {
 export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<Project>(config.notionProjectTableId);
   return {
-    paths: table.filter(row => row.published).map(row => `/${row.slug}`),
+    paths: table.filter((row) => row.published).map((row) => `/${row.slug}`),
     fallback: false,
   };
 };
@@ -39,10 +40,10 @@ export const getStaticProps: GetStaticProps<
   }
 
   const table = await getBlogTable<Project>(config.notionProjectTableId);
-  const publishedProjects = table.filter(p => p.published);
+  const publishedProjects = table.filter((p) => p.published);
 
-  const post = table.find(t => t.slug === slug);
-  const postIndex = publishedProjects.findIndex(t => t.slug === slug);
+  const post = table.find((t) => t.slug === slug);
+  const postIndex = publishedProjects.findIndex((t) => t.slug === slug);
 
   const morePosts = [...publishedProjects, ...publishedProjects].slice(
     postIndex + 1,
@@ -114,6 +115,7 @@ const BlogPost: React.FC<PostProps> = ({
         <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
       </article>
       <div className="post-container max-w-2xl my-20 text-sm">
+        <AuthorFooter />
         <div className="flex justify-between items-center">
           <h3 className="font-bold text-gray-600 my-4 uppercase tracking-wider">
             Continue reading
@@ -123,7 +125,7 @@ const BlogPost: React.FC<PostProps> = ({
           </Link>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {morePosts.map(p => (
+          {morePosts.map((p) => (
             <ProjectCard key={p.id} {...p} />
           ))}
         </ul>

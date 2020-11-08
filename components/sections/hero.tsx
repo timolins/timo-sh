@@ -1,35 +1,13 @@
 import React from "react";
 import { Nav } from "./nav";
-import Image from "next/image";
+import { ProfileImage } from "../base/profile-image";
 
 export const Hero: React.FC = () => (
   <section className="bg-gray-100">
     <Nav />
     <div className="container">
       <div className="flex flex-col items-center my-16">
-        <div
-          className="relative rounded-full"
-          style={{
-            width: 128,
-            height: 128,
-            backgroundColor: "#FCC098",
-          }}
-        >
-          <Image
-            className="rounded-full"
-            src={"/portrait.jpg"}
-            height={128}
-            quality={85}
-            width={128}
-          />
-          <div
-            className="absolute rounded-full inset-0"
-            style={{
-              boxShadow:
-                "inset 0 0 0 1px rgba(0,0,0,0.2), inset 0 0 0 2px rgba(255,255,255,0.2)",
-            }}
-          />
-        </div>
+        <ProfileImage />
         <h1 className="text-4xl font-bold mt-2">Hey, I'm Timo!</h1>
         <p className="text-2xl text-gray-700 text-center">
           I design and build apps, and everything that comes with it.

@@ -5,13 +5,12 @@ import { NextSeo } from "next-seo";
 import { NotionRenderer, BlockMapType } from "react-notion";
 import { config } from "../../config";
 
-import TwitterIcon from "../../assets/svgs/twitter.svg";
-
 import { getBlogTable, getPageBlocks, getPageViews } from "../../core/blog";
 import { dateFormatter } from "../../core/utils";
 import { Post } from "../../types/blog";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Nav } from "../../components/sections/nav";
+import { AuthorFooter } from "../../components/base/author-footer";
 import { Footer } from "../../components/sections/footer";
 import { toNotionImageUrl } from "../../core/notion";
 
@@ -99,20 +98,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
         <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
       </article>
       <div className="w-full max-w-3xl px-4 mx-auto my-8">
-        <div className="flex items-end py-6 my-2 border-t">
-          <div>
-            <div className="font-semibold">Timo Lins</div>
-            <div>
-              <a
-                className="inline-flex text-gray-500 transition-colors duration-200 hover:text-gray-600"
-                href="https://twitter.com/timolins"
-              >
-                <span>@timolins</span>
-                <TwitterIcon className="w-6" />
-              </a>
-            </div>
-          </div>
-        </div>
+        <AuthorFooter />
       </div>
       <Footer />
     </>
