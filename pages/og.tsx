@@ -14,7 +14,7 @@ const OGImage: React.FC = () => {
       <div className="text-6xl text-gray-600 -mt-4">timo.sh</div>
       <Logo
         style={{ opacity: 0.05 }}
-        className="absolute right-0 top-0 max-w-4xl transform translate-x-48 -translate-y-24"
+        className="absolute right-0 top-0 max-w-2xl transform translate-x-32 -translate-y-16"
       />
     </div>
   );

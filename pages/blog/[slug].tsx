@@ -73,13 +73,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
         description={post.preview}
         openGraph={{
           type: "article",
-          images: [
-            {
-              url: getOpenGraphImage(post.title),
-              width: 1200,
-              height: 630,
-            },
-          ],
+          images: [getOpenGraphImage(post.title)],
           article: {
             publishedTime: new Date(post.date).toISOString(),
           },

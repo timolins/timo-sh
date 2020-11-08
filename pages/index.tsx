@@ -11,6 +11,7 @@ import { fetchRepos, Repo } from "../core/github";
 import { config } from "../config";
 import { Achievement } from "../types/achievement";
 import { Project } from "../types/project";
+import { getOpenGraphImage } from "../core/og-image";
 
 interface AppProps {
   posts: Post[];
@@ -39,7 +40,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
   ]);
 
   const achievements: Achievement[] = await Promise.all(
-    achievementsData.map(async a => ({
+    achievementsData.map(async (a) => ({
       ...a,
       blockMap: await getPageBlocks(a.id),
     }))
@@ -48,10 +49,10 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
   return {
     props: {
       posts: posts
-        .filter(post => post.published)
+        .filter((post) => post.published)
         .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date))),
       achievements,
-      projects: projects.filter(p => p.published),
+      projects: projects.filter((p) => p.published),
       repos: {
         starredRepos,
         contributedRepos,
@@ -66,6 +67,13 @@ export default ({ achievements, repos, projects }: AppProps) => (
     <NextSeo
       title={"Timo Lins – Code · Design · Film"}
       titleTemplate={"%s"}
+      openGraph={{
+        images: [getOpenGraphImage("Timo Lins")],
+      }}
+      twitter={{
+        handle: "@timolins",
+        cardType: "summary_large_image",
+      }}
       description="Hey I'm Timo! I design and build digital products. Illustrating and film making are also my passion."
     />
     <Hero />

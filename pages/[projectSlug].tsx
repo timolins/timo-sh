@@ -85,13 +85,7 @@ const BlogPost: React.FC<PostProps> = ({
         canonical={`https://timo.sh/${post.slug}`}
         openGraph={{
           type: "article",
-          images: [
-            {
-              url: getOpenGraphImage(post.title),
-              width: 1200,
-              height: 630,
-            },
-          ],
+          images: [getOpenGraphImage(post.title)],
           article: {
             publishedTime: new Date(post.date).toISOString(),
             tags: post.tags,
