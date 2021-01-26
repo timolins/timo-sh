@@ -69,7 +69,7 @@ export const Achievements: React.FC<{ achievements: Achievement[] }> = ({
         <div className="text-2xl text-gray-600">Things I Have Achieved</div>
         <div className="my-4">
           {achievements
-            .filter(a => showMore || a.highlight)
+            .filter((a) => showMore || a.highlight)
             .map((a, i) => (
               <AchievementRow key={i} {...a} />
             ))}
@@ -77,6 +77,7 @@ export const Achievements: React.FC<{ achievements: Achievement[] }> = ({
         <div className="flex justify-center">
           <button
             className="px-2 py-1 text-gray-800 border border-gray-300 rounded shadow-xs"
+            data-splitbee-event="Toggle Achievements"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "Show less ↑" : "Show more ↓"}

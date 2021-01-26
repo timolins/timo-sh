@@ -15,6 +15,8 @@ const RepoList: React.FC<{
         <li key={id}>
           <a
             href={url}
+            data-splitbee-event={"Open External Link"}
+            data-splitbee-event-url={url}
             className="block my-4 p-4 -mx-4 hover:bg-gray-100 rounded-md"
           >
             <div>
