@@ -1,9 +1,0 @@
-{
-  "alias": "timo.sh",
-  "build": {
-    "env": {
-      "GITHUB_TOKEN": "@timo-sh-github"
-    }
-  },
-  "version": 2
-}
