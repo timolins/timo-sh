@@ -101,9 +101,7 @@ const BlogPost: React.FC<PostProps> = ({ post, postViewCount, blocks }) => {
           {" / "}
           <span>{postViewCount || "..."} Views</span>
           {" / "}
-          <Link href="/work">
-            <a className="text-blue-500">Work</a>
-          </Link>
+          <Link href="/work" className="text-blue-500">Work</Link>
         </div>
       </div>
       <article className="flex-1 w-full max-w-3xl px-4 mx-auto">

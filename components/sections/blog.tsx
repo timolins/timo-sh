@@ -19,16 +19,14 @@ export const Blog: React.FC<BlogProps> = ({ posts }) => {
       <ul>
         {posts.map(post => (
           <li key={post.id}>
-            <Link href={`/blog/${post.slug}`}>
-              <a className="my-2 py-4 px-4 -mx-4 hover:bg-gray-100 rounded-md block">
-                <div className="flex justify-between">
-                  <span className="text-blue-600">{post.title}</span>
-                  <span className="text-gray-600">
-                    {dateFormatter.format(new Date(post.date))}
-                  </span>
-                </div>
-                <div className="mt-1 text-gray-700 mr-4">{post.preview}</div>
-              </a>
+            <Link href={`/blog/${post.slug}`} className="my-2 py-4 px-4 -mx-4 hover:bg-gray-100 rounded-md block">
+              <div className="flex justify-between">
+                <span className="text-blue-600">{post.title}</span>
+                <span className="text-gray-600">
+                  {dateFormatter.format(new Date(post.date))}
+                </span>
+              </div>
+              <div className="mt-1 text-gray-700 mr-4">{post.preview}</div>
             </Link>
           </li>
         ))}

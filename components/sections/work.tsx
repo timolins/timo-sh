@@ -47,46 +47,45 @@ export const Project: React.FC<
     className?: string;
   }
 > = ({ title, preview, images, featured, slug, types, className }) => (
-  <Link href={`/[projectSlug]`} as={`/${slug}`}>
-    <a
-      aria-label={`${title} - Project`}
-      className={clsx(
-        "focus group border bg-white rounded-md overflow-hidden flex flex-col",
-        "transform transition-transform ease-in-out duration-100 hover:border-gray-400",
-        featured && "shadow-sm hover:-translate-y-1 focus:-translate-y-1",
-        className
-      )}
-    >
-      {featured && (
-        <div className="pb-2/3 bg-gray-100 relative border-b overflow-hidden">
-          {images && images[0] && (
-            <img
-              className={clsx("absolute w-full h-full object-cover")}
-              src={toNotionImageUrl(images[0].url)}
-              alt={title}
-            />
-          )}
+  <Link
+    href={`/${slug}`}
+    aria-label={`${title} - Project`}
+    className={clsx(
+      "focus group border bg-white rounded-md overflow-hidden flex flex-col",
+      "transform transition-transform ease-in-out duration-100 hover:border-gray-400",
+      featured && "shadow-sm hover:-translate-y-1 focus:-translate-y-1",
+      className
+    )}
+  >
+    {featured && (
+      <div className="pb-2/3 bg-gray-100 relative border-b overflow-hidden">
+        {images && images[0] && (
+          <img
+            className={clsx("absolute w-full h-full object-cover")}
+            src={toNotionImageUrl(images[0].url)}
+            alt={title}
+          />
+        )}
+      </div>
+    )}
+    <div className="flex flex-1 flex-col justify-between">
+      <div className="p-4 pb-0">
+        <div className="font-semibold text-gray-800 group-hover:text-gray-700">
+          {title}
         </div>
-      )}
-      <div className="flex flex-1 flex-col justify-between">
-        <div className="p-4 pb-0">
-          <div className="font-semibold text-gray-800 group-hover:text-gray-700">
-            {title}
-          </div>
-          <div className="text-s"></div>
-          <div className={clsx(!featured && "text-sm", "text-gray-700")}>
-            {preview}
-          </div>
-        </div>
-        <div className="flex justify-between p-4">
-          <div className="flex items-center">
-            {types.map(type => (
-              <TypeBadge key={type} compact type={type} />
-            ))}
-          </div>
+        <div className="text-s"></div>
+        <div className={clsx(!featured && "text-sm", "text-gray-700")}>
+          {preview}
         </div>
       </div>
-    </a>
+      <div className="flex justify-between p-4">
+        <div className="flex items-center">
+          {types.map(type => (
+            <TypeBadge key={type} compact type={type} />
+          ))}
+        </div>
+      </div>
+    </div>
   </Link>
 );
 
@@ -112,10 +111,8 @@ export const Work: React.FC<{
             Want to see more?
           </div>
           <div className="text-gray-600">Explore more of my work</div>
-          <Link href="/work">
-            <a className="mt-3 bg-gray-800 hover:bg-gray-700 text-gray-100 py-1 px-6 rounded-md">
-              View all
-            </a>
+          <Link href="/work" className="mt-3 bg-gray-800 hover:bg-gray-700 text-gray-100 py-1 px-6 rounded-md">
+            View all
           </Link>
         </div>
       </div>

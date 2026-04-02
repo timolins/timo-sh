@@ -5,31 +5,30 @@
   "repository": "https://github.com/timolins/timo-sh",
   "author": "Timo Lins <me@timo.sh>",
   "scripts": {
-    "dev": "next -p 8000",
+    "dev": "next dev -p 8000",
     "build": "next build",
     "start": "next start"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "@svgr/webpack": "^5.4.0",
-    "@types/node": "^14.0.23",
-    "@types/node-fetch": "^2.5.7",
-    "@types/react": "^16.9.43",
-    "autoprefixer": "^9.8.5",
-    "next-compose-plugins": "^2.2.0",
-    "playwright": "^1.5.2",
-    "typescript": "^3.9.7"
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.33",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "clsx": "^1.1.1",
-    "dayjs": "^1.8.29",
-    "next": "^10.0.0",
-    "next-seo": "^4.7.3",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "next": "^14.1.0",
+    "next-seo": "^6.4.0",
+    "notion-client": "^7.10.0",
+    "notion-types": "^7.10.0",
     "playwright-aws-lambda": "^0.6.0",
-    "playwright-core": "^1.5.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-notion": "^0.9.1-beta.1",
-    "tailwindcss": "^1.5.1"
+    "playwright-core": "^1.41.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-notion": "^0.10.0",
+    "tailwindcss": "^3.4.1"
   }
 }

@@ -119,9 +119,7 @@ const BlogPost: React.FC<PostProps> = ({
           <h3 className="font-bold text-gray-600 my-4 uppercase tracking-wider">
             Continue reading
           </h3>
-          <Link href="/work">
-            <a className="font-bold text-blue-600 my-4 ">View all →</a>
-          </Link>
+          <Link href="/work" className="font-bold text-blue-600 my-4">View all →</Link>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {morePosts.map((p) => (

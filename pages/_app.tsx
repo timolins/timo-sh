@@ -9,7 +9,6 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="shortcut icon" href="/favicon.png" />
-        <script async src="https://cdn.splitbee.io/sb.js"></script>
         <link
           rel="alternate"
           type="application/rss+xml"

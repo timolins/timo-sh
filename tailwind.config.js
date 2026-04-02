@@ -1,10 +1,9 @@
 const { boxShadow } = require("tailwindcss/defaultTheme");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: [
-    "./pages/*.tsx",
+  content: [
     "./pages/**/*.tsx",
-    "./components/*.tsx",
     "./components/**/*.tsx",
   ],
   theme: {
@@ -31,12 +30,5 @@ module.exports = {
       xs: "0 2px 2px rgba(0,0,0,0.02)",
       sm: "0 4px 4px rgba(0,0,0,0.02)",
     },
-  },
-  variants: {
-    textColor: ["responsive", "hover", "focus", "group-hover"],
-    backgroundColor: ["responsive", "hover", "focus", "group-hover"],
-    translate: ["hover", "focus", "group-hover"],
-    opacity: ["hover", "group-hover"],
-    scale: ["hover", "group-hover"],
   },
 };
