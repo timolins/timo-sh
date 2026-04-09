@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  images: {
+    remotePatterns: [{ hostname: "www.notion.so" }],
+  },
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   },

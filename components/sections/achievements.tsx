@@ -12,6 +12,7 @@ import {
   Achievement,
 } from "../../types/achievement";
 import { NotionRenderer } from "react-notion";
+import { toNotionImageUrl } from "../../core/notion";
 
 const AchievementIcon: React.FC<{
   type: AchievementType;
@@ -45,7 +46,7 @@ const AchievementRow: React.FC<AchievementProps> = ({
     <AchievementIcon className="w-10 md:w-24" type={type} />
     <h4 className="flex-1 mx-4">
       <div className="font-semibold">{title}</div>
-      <NotionRenderer blockMap={blockMap} />
+      <NotionRenderer blockMap={blockMap} mapImageUrl={toNotionImageUrl} />
     </h4>
     <div>
       <Timestamp

@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import { Project as ProjectData, ProjectType } from "../../types/project";
 import { toNotionImageUrl } from "../../core/notion";
+import Image from "next/image";
 import Link from "next/link";
 
 import CodeIcon from "../../assets/svgs/code.svg";
@@ -60,10 +61,12 @@ export const Project: React.FC<
     {featured && (
       <div className="pb-2/3 bg-gray-100 relative border-b overflow-hidden">
         {images && images[0] && (
-          <img
-            className={clsx("absolute w-full h-full object-cover")}
+          <Image
+            className="absolute w-full h-full object-cover"
             src={toNotionImageUrl(images[0].url)}
             alt={title}
+            fill
+            sizes="(max-width: 640px) 100vw, 33vw"
           />
         )}
       </div>
