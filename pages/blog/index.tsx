@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
     props: {
       posts: filteredPosts,
     },
-    revalidate: 10,
+    revalidate: 300,
   };
 };
 

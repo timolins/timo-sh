@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<
       postViewCount,
       blocks,
     },
-    revalidate: 10,
+    revalidate: 300,
   };
 };
 

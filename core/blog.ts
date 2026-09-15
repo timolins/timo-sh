@@ -7,7 +7,15 @@ import type {
 } from "notion-types";
 import type { BlockMapType } from "react-notion";
 
-const notion = new NotionAPI();
+const notion = new NotionAPI({
+  // Notion's Cloudflare protection rejects Node's user-agent-less requests.
+  // Apply this to every private API call made by notion-client.
+  ofetchOptions: {
+    headers: {
+      "User-Agent": "timo.sh/1.0 (+https://timo.sh)",
+    },
+  },
+});
 
 const pageCache = new Map<string, ExtendedRecordMap>();
 let requestQueue = Promise.resolve();

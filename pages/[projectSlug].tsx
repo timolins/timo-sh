@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps<
       blocks,
       morePosts,
     },
-    revalidate: 10,
+    revalidate: 300,
   };
 };
 

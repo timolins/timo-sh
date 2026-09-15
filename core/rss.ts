@@ -10,16 +10,22 @@ const generateRssItem = (post: Post): string => `
 </item>
 `;
 
-export const generateRss = (posts: Post[]): string => `
+export const generateRss = (posts: Post[]): string => {
+  const lastBuildDate = posts[0]
+    ? `<lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>`
+    : "";
+
+  return `
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Timo Lins – Blog</title>
   <link>https://timo.sh/blog</link>
   <description>Writing about coding, design and things I like</description>
   <language>en</language>
-  <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
+  ${lastBuildDate}
   <atom:link href="https://timo.sh/api/blog.xml" rel="self" type="application/rss+xml"/>
   ${posts.map(generateRssItem).join("")}
 </channel>
 </rss>
 `;
+};

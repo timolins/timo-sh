@@ -3,7 +3,10 @@ import { MapImageUrl } from "react-notion";
 export const toNotionImageUrl: MapImageUrl = (url) => {
   if (url.startsWith("data:")) return url;
 
-  if (url.startsWith("https://file.notion.so")) {
+  if (
+    url.startsWith("https://file.notion.so") ||
+    url.startsWith("https://file.notion.com")
+  ) {
     try {
       const parsed = new URL(url);
       const path = parsed.pathname.replace(/^\/f\/f\//, "");

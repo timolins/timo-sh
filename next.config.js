@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  experimental: {
+    // Notion rate-limits parallel page generation during production builds.
+    cpus: 1,
+  },
   images: {
     remotePatterns: [{ hostname: "www.notion.so" }],
   },

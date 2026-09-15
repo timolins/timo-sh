@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
         contributedRepos,
       },
     },
-    revalidate: 10,
+    revalidate: 300,
   };
 };
 

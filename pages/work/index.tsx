@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
     props: {
       projects: projects.filter(post => post.published),
     },
-    revalidate: 10,
+    revalidate: 300,
   };
 };
 
